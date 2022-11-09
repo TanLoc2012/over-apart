@@ -1,0 +1,33 @@
+.container__footer {
+    background-color: #fceed5;
+    width: 100%;
+
+    .footer {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+
+        .footer__section {
+            margin: 28px 0;
+            .footer__section-title {
+                margin-bottom: 12px;
+            }
+
+            .footer__section-content {
+                font-size: 13px;
+                font-weight: 300;
+
+                p {
+                    margin-top: 4px;
+                }
+            }
+
+            .footer__section-social {
+                margin-right: 16px;
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+}

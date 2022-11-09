@@ -5,11 +5,15 @@ import LoginPage from './pages/login/LoginPage';
 
 function App() {
     return (
-        // <Router>
-        //     <Route path="/" element={<HomePage />} />
-        //     <Route path="/login" element={<LoginPage />} />
-        // </Router>
-        <HomePage />
+        <Router>
+            <Route path="/" exact>
+                <HomePage></HomePage>
+            </Route>
+            <Route path="/login">
+                <LoginPage></LoginPage>
+            </Route>
+        </Router>
+        // <HomePage />
     );
 }
 

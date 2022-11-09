@@ -1,14 +1,16 @@
-.container {
+.container__header {
     background-color: #fceed5;
     width: 100%;
-    height: var(--heigth-header);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 
     .header {
         margin: 0 auto;
         width: 80%;
         display: flex;
         justify-content: space-between;
-        height: 100%;
+        height: var(--heigth-header);
 
         .header__logo {
             margin: auto 0;
@@ -23,12 +25,12 @@
             gap: 30px;
             align-items: center;
 
-            .header__nav__item {
+            .header__nav-item {
                 color: var(--nav-bar);
                 font-weight: 600;
             }
 
-            .header__nav__container__cart {
+            .header__nav__container-cart {
                 height: 21px;
                 width: 21px;
                 position: relative;
@@ -50,6 +52,27 @@
                     left: 14px;
                     color: rgb(36, 36, 36);
                     font-weight: 500;
+                }
+            }
+
+            .header__nav__authen {
+                display: flex;
+                gap: 16px;
+
+                .header__nav__authen-item {
+                    color: var(--nav-bar);
+                    font-weight: 600;
+                    position: relative;
+                }
+
+                .header__nav__authen-seperate::after {
+                    content: '';
+                    width: 0;
+                    height: 14px;
+                    border-right: 2px solid black;
+                    top: 23%;
+                    left: 110%;
+                    position: absolute;
                 }
             }
         }

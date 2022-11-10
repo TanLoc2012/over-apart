@@ -1,0 +1,15 @@
+.container__breadcrumb {
+    margin: calc(var(--heigth-header) + 8px) auto 20px !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .breadcrumb__path,
+    span {
+        color: #3b9fc4;
+    }
+
+    .breadcrumb__icon {
+        height: 14px;
+    }
+}

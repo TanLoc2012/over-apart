@@ -1,8 +1,5 @@
 .product__cart {
-    margin-top: 100px;
-    margin-left: 100px;
     width: 188px;
-    height: 280px;
     background-color: #fdfdfd;
     display: flex;
     flex-direction: column;
@@ -21,6 +18,8 @@
     .product__card-info {
         display: flex;
         flex-direction: column;
+        padding-left: 16px;
+        padding-bottom: 6px;
         .product__card-info-name {
             font-size: 1.1rem;
             font-weight: 500;
@@ -28,6 +27,24 @@
 
         .product__card-info-review {
             font-size: 1.1rem;
+            display: flex;
+
+            .product__card-info-rating {
+                color: orange;
+                font-size: 15px;
+            }
+
+            .product__card-info-seperate {
+                width: 1px;
+                height: 12px;
+                background-color: rgb(199, 199, 199);
+                margin: 6px 6px 0 6px;
+            }
+
+            .product__card-info-quantity {
+                text-align: center;
+                margin: 4px 0;
+            }
         }
 
         .product__card-info-price {

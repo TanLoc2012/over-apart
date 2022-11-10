@@ -5,7 +5,7 @@ import { faFacebook, faSquareInstagram, faYoutube } from '@fortawesome/free-bran
 function Footer() {
     return (
         <div className="container__footer">
-            <footer className="footer">
+            <footer className="container footer">
                 <div className="footer__section">
                     <h5 className="footer__section-title">HỖ TRỢ KHÁCH HÀNG</h5>
                     <div className="footer__section-content">

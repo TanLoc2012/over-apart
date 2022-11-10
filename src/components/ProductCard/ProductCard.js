@@ -11,8 +11,12 @@ function ProductCard() {
                 </Link>
             </div>
             <div className="product__card-info">
-                <p className="product__card-info-name">MO231 - Pomeranian White</p>
-                <p className="product__card-info-review">Ghe</p>
+                <p className="product__card-info-name">MO231 - Pomeranian White </p>
+                <div className="product__card-info-review">
+                    <div className="product__card-info-rating">★★★★★</div>
+                    <div className="product__card-info-seperate"></div>
+                    <div className="product__card-info-quantity">Đã bán 11</div>
+                </div>
                 <p className="product__card-info-price">6.900.000 đ</p>
             </div>
         </div>

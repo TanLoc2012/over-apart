@@ -11,9 +11,9 @@ import Avatar from '../Avatar/Avatar';
 function Header() {
     return (
         <div className="container__header">
-            <header className="header">
+            <header className="container header">
                 <div className="header__logo">
-                    <Link to="/home">
+                    <Link to="/">
                         <img src={images.logo1} alt="Logo1" />
                     </Link>
                 </div>
@@ -31,7 +31,7 @@ function Header() {
                 <Search></Search>
                 <nav className="header__nav">
                     <div className="header__nav__container-cart">
-                        <Link to="/cart-shopping">
+                        <Link to="/cart">
                             <FontAwesomeIcon icon={faCartShopping} className="header__nav__cart" />
                         </Link>
                         <div className="header__nav__cart__number">0</div>

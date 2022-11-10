@@ -1,7 +1,8 @@
-import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 
-function HomePage() {
+function ShopPage() {
     return (
         <div>
             <Header></Header>
@@ -10,4 +11,4 @@ function HomePage() {
     );
 }
 
-export default HomePage;
+export default ShopPage;

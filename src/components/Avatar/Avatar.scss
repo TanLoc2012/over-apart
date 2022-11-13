@@ -1,9 +1,7 @@
 .avatar {
-    height: var(--heigth-avatar);
     .avatar__image {
         width: var(--heigth-avatar);
-        height: var(--heigth-avatar);
-        border-radius: 20px;
+        border-radius: 50%;
         margin: auto;
     }
 }

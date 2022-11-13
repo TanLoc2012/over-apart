@@ -11,7 +11,7 @@ function ProductCard() {
                 </Link>
             </div>
             <div className="product__card-info">
-                <p className="product__card-info-name">MO231 - Pomeranian White </p>
+                <p className="product__card-info-name">MO231 - Pomeranian White</p>
                 <div className="product__card-info-review">
                     <div className="product__card-info-rating">★★★★★</div>
                     <div className="product__card-info-seperate"></div>

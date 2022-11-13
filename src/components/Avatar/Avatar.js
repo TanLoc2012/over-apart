@@ -1,11 +1,11 @@
 import './Avatar.scss';
-import images from '../../assets/images';
+import { Link } from 'react-router-dom';
 
-function Avatar() {
+function Avatar({ child }) {
     return (
-        <a className="avatar">
-            <img className="avatar__image" src={images.avatar} alt="Avatar" />
-        </a>
+        <Link to={child.href} className="avatar">
+            <img className="avatar__image" src={child.img} alt="Avatar" style={{ width: child.imgWidth }} />
+        </Link>
     );
 }
 

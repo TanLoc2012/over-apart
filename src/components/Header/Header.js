@@ -1,12 +1,13 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 import './Header.scss';
 import Search from '../Search/Search';
 import images from '../../assets/images';
 import Avatar from '../Avatar/Avatar';
+import ListCartItem from './ListCartItem';
 
 function Header() {
     return (
@@ -28,13 +29,33 @@ function Header() {
                         Dự án thực tế
                     </Link>
                 </nav>
-                <Search></Search>
+
+                {/* <Search child={{ borderRadius: '46px', placeHolder: 'Nhập tên sản phẩm, cửa hàng' }}></Search> */}
                 <nav className="header__nav">
+                    <FontAwesomeIcon icon={faMagnifyingGlass} className="header__nav-search" />
                     <div className="header__nav__container-cart">
                         <Link to="/cart">
                             <FontAwesomeIcon icon={faCartShopping} className="header__nav__cart" />
                         </Link>
                         <div className="header__nav__cart__number">0</div>
+                    </div>
+                    <div className="header__nav-cart-list">
+                        <div className="header__nav-cart-list-header">Sản phẩm mới thêm</div>
+                        <div className="header__nav-cart-list-body">
+                            <ListCartItem></ListCartItem>
+                            <ListCartItem></ListCartItem>
+                            <ListCartItem></ListCartItem>
+                            <ListCartItem></ListCartItem>
+                            <ListCartItem></ListCartItem>
+                            <ListCartItem></ListCartItem>
+                        </div>
+                        <div className="header__nav-cart-list-footer">
+                            <div>
+                                <span>Tổng tiền:</span>
+                                <span style={{ color: 'red' }}> 4.500.000 đ</span>
+                            </div>
+                            <button>Xem Giỏ Hàng</button>
+                        </div>
                     </div>
                     <div className="header__nav__authen">
                         <Link to="/register" className="header__nav__authen-item header__nav__authen-seperate">

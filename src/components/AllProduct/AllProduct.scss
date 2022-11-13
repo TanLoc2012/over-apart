@@ -1,0 +1,81 @@
+.container_shop-all-product {
+    background-color: white;
+    display: flex;
+
+    .list__product {
+        width: 80%;
+        .list__product-header {
+            margin: 13px;
+            display: flex;
+            justify-content: space-between;
+            .list__product-header-left {
+                font-weight: 600;
+                color: red;
+                font-size: 1.7rem;
+            }
+            .list__product-header-right {
+                display: flex;
+                gap: 12px;
+                align-items: center;
+                min-width: 220px;
+                margin-right: 16px;
+                .list__product-header-right-text {
+                    font-weight: 500;
+                }
+                .list__product-header-right-btn {
+                    flex: 1;
+                    cursor: pointer;
+                    height: 34px;
+                    padding: 6px 12px;
+                    border: 1px solid #ccc;
+                    background-color: #fff;
+                    border-radius: 4px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 8px;
+                }
+            }
+        }
+        .list__product-body {
+            display: flex;
+            flex-wrap: wrap;
+            .list__product-body-item {
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    .all__product-filter {
+        flex: 1;
+        .all__product-filter-header {
+            font-weight: 600;
+            font-size: 1.6rem;
+            margin-top: 13px;
+            height: 34px;
+            width: 95%;
+            background-color: #f5f5f5;
+        }
+        .all__product-filter-body {
+            .fliter__body-item {
+                width: 95%;
+                margin-bottom: 8px;
+                margin-top: 8px;
+                .filter__item-title {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+                .filter__item-body {
+                    .filter__item-body-item {
+                        margin-top: 6px;
+                        margin-left: 12px;
+                        .filter__item-body-item-text {
+                            margin-left: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

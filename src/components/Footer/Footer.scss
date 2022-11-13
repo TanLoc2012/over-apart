@@ -14,10 +14,9 @@
             .footer__section-content {
                 font-size: 13px;
                 font-weight: 300;
-
-                p {
-                    margin-top: 4px;
-                }
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
             }
 
             .footer__section-social {

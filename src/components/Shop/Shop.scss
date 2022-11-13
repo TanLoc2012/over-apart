@@ -1,0 +1,35 @@
+.container__shop {
+    margin-top: calc(var(--heigth-header) + 8px) !important;
+
+    .container__shop-info {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        .shop__info-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            font-size: 1.8rem;
+            padding: 8px 100px 8px 12px;
+        }
+        .shop__info-overview {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            .shop__info-overview-item {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                .shop__info-overview-item-value {
+                    display: flex;
+                    gap: 8px;
+
+                    .shop__info-overview-item-text {
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,9 +1,10 @@
 .search {
-    width: 204px;
+    width: 250px;
     height: var(--heigth-header);
     padding: 12px 0;
 
     .search__btn {
+        width: 100%;
         display: flex;
         align-items: center;
         gap: 12px;

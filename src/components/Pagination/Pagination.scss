@@ -1,0 +1,19 @@
+.pagination {
+    justify-content: center;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 12px;
+    .pagination__item {
+        padding: 4px 10px;
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+            background: #eee;
+        }
+    }
+    .pagination-active {
+        background: #ffcf86;
+    }
+}

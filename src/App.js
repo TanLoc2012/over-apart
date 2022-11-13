@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
 import HomePage from './pages/customer/HomePage';
 import LoginPage from './pages/login/LoginPage';
 import CartPage from './pages/customer/CartPage';
@@ -8,18 +8,15 @@ import ShopPage from './pages/customer/ShopPage';
 function App() {
     return (
         <Router>
-            <Route path="/" exact>
-                <HomePage></HomePage>
+            <Routes>
+            <Route path="/" exact element={<HomePage />}></Route>
+            <Route path="/login" element={<LoginPage />}>
             </Route>
-            <Route path="/login">
-                <LoginPage></LoginPage>
+            <Route path="/cart" element={<CartPage />}>
             </Route>
-            <Route path="/cart">
-                <CartPage></CartPage>
+            <Route path="/shop" element={<ShopPage />}>
             </Route>
-            <Route path="/shop">
-                <ShopPage></ShopPage>
-            </Route>
+            </Routes>
         </Router>
         // <HomePage />
     );

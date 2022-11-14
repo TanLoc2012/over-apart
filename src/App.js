@@ -10,12 +10,9 @@ function App() {
         <Router>
             <Routes>
             <Route path="/" exact element={<HomePage />}></Route>
-            <Route path="/login" element={<LoginPage />}>
-            </Route>
-            <Route path="/cart" element={<CartPage />}>
-            </Route>
-            <Route path="/shop" element={<ShopPage />}>
-            </Route>
+            <Route path="/login" element={<LoginPage />}></Route>
+            <Route path="/cart" element={<CartPage />}></Route>
+            <Route path="/shop" element={<ShopPage />}></Route>
             </Routes>
         </Router>
         // <HomePage />

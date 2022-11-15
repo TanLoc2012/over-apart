@@ -32,11 +32,7 @@
                 color: var(--nav-bar);
                 font-weight: 600;
             }
-            &:hover{
-                .header__nav-cart-list {
-                    display: block;
-                }
-            }
+
             .header__nav-cart-list {
                 display: none;
                 width: 350px;
@@ -96,6 +92,9 @@
                 }
             }
             .header__nav__container-cart {
+                &:hover+.header__nav-cart-list{
+                        display: block;
+                }
                 height: 24px;
                 width: 24px;
                 position: relative;

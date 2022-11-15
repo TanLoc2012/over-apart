@@ -32,6 +32,11 @@
                 color: var(--nav-bar);
                 font-weight: 600;
             }
+            &:hover{
+                .header__nav-cart-list {
+                    display: block;
+                }
+            }
             .header__nav-cart-list {
                 display: none;
                 width: 350px;
@@ -44,7 +49,7 @@
                 border-radius: 2px;
                 box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
 
-                &::after {
+                &:after {
                     content: '';
                     position: absolute;
                     background-color: white;

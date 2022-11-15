@@ -7,7 +7,6 @@ function ShopPage() {
         <div>
             <Header></Header>
             <Shop></Shop>
-            <ImageSlider></ImageSlider>
             <Footer></Footer>
         </div>
     );

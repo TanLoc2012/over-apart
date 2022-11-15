@@ -3,6 +3,7 @@ import Header from '../../components/Header/Header';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import AllProduct from '../../components/AllProduct/AllProduct';
 import HeaderText from '../../components/HeaderText/HeaderText';
+import ImageSlider from '../../components/ImageSlider/ImageSlider';
 
 function SampleDesignPage() {
     const breadcrumb = [
@@ -21,6 +22,7 @@ function SampleDesignPage() {
             <Header></Header>
             <Breadcrumb child={breadcrumb}></Breadcrumb>
             <HeaderText></HeaderText>
+            <ImageSlider></ImageSlider>
             <div className="container">
                 <AllProduct></AllProduct>
             </div>

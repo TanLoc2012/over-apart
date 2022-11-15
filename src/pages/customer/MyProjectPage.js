@@ -1,8 +1,10 @@
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
+import ListMyProjectCard from '../../components/MyProjectCard/ListMyProjectCard';
+import Paginaton from '../../components/Pagination/Pagination';
 
-function MyProject() {
+function MyProjectPage() {
     const breadcrumb = [
         {
             path: '/',
@@ -18,9 +20,11 @@ function MyProject() {
         <div>
             <Header></Header>
             <Breadcrumb child={breadcrumb}></Breadcrumb>
+            <ListMyProjectCard></ListMyProjectCard>
+            <Paginaton></Paginaton>
             <Footer></Footer>
         </div>
     );
 }
 
-export default MyProject;
+export default MyProjectPage;

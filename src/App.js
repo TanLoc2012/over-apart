@@ -7,7 +7,7 @@ import ShopPage from './pages/customer/ShopPage';
 import FurniturePage from './pages/customer/FurniturePage';
 import SampleDesignPage from './pages/customer/SampleDesignPage';
 import RealProjectPage from './pages/customer/RealProjectPage';
-import MyProject from './pages/customer/MyProject';
+import MyProjectPage from './pages/customer/MyProjectPage';
 import InfoProductPage from './pages/customer/InfoProduct';
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
                 <Route path="/furniture" element={<FurniturePage />}></Route>
                 <Route path="/sample-design" element={<SampleDesignPage />}></Route>
                 <Route path="/real-project" element={<RealProjectPage />}></Route>
-                <Route path="/my-project" element={<MyProject />}></Route>
+                <Route path="/my-project" element={<MyProjectPage />}></Route>
                 <Route path="/product" element={<InfoProductPage />}></Route>
             </Routes>
         </Router>

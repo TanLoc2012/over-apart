@@ -3,7 +3,7 @@
     display: flex;
 
     .list__product {
-        width: 80%;
+        width: 81%;
         .list__product-header {
             margin: 13px;
             display: flex;
@@ -38,11 +38,7 @@
             }
         }
         .list__product-body {
-            display: flex;
-            flex-wrap: wrap;
-            .list__product-body-item {
-                margin-bottom: 8px;
-            }
+            margin-bottom: 12px;
         }
     }
 

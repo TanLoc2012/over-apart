@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 import './Header.scss';
 import Search from '../Search/Search';
@@ -10,6 +11,11 @@ import Avatar from '../Avatar/Avatar';
 import ListCartItem from './ListCartItem';
 
 function Header() {
+    var [displaySearch, setDisplaySearch] = useState(false);
+    const handleDisplaySearch = () => {
+        setDisplaySearch(!displaySearch);
+    };
+
     return (
         <div className="container__header">
             <header className="container header">
@@ -30,9 +36,19 @@ function Header() {
                     </Link>
                 </nav>
 
-                {/* <Search child={{ borderRadius: '46px', placeHolder: 'Nhập tên sản phẩm, cửa hàng' }}></Search> */}
                 <nav className="header__nav">
-                    <FontAwesomeIcon icon={faMagnifyingGlass} className="header__nav-search" />
+                    <Search
+                        child={{
+                            borderRadius: '46px',
+                            placeHolder: 'Nhập tên sản phẩm, cửa hàng',
+                            isDisplaySearch: displaySearch ? 'block' : 'none',
+                        }}
+                    ></Search>
+                    <FontAwesomeIcon
+                        icon={faMagnifyingGlass}
+                        className="header__nav-search"
+                        onClick={() => handleDisplaySearch()}
+                    />
                     <div className="header__nav__container-cart">
                         <Link to="/cart">
                             <FontAwesomeIcon icon={faCartShopping} className="header__nav__cart" />

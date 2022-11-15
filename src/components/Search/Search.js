@@ -4,7 +4,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 function Search({ child }) {
     return (
-        <div className="search">
+        <div className="search" style={{ display: child.isDisplaySearch }}>
             <button className="search__btn" style={{ borderRadius: child.borderRadius }}>
                 <FontAwesomeIcon icon={faMagnifyingGlass} className="search__btn__icon" />
                 <input placeholder={child.placeHolder} className="search_btn_input" />

@@ -46,8 +46,6 @@
                             color: rgb(11, 116, 229);
                         }
                     }
-                    .shop__item-price {
-                    }
                     .shop__item-quantity-wrapper {
                         .shop__item-quantity {
                             display: inline-flex;
@@ -67,8 +65,6 @@
                                 padding: 2px 12px;
                                 width: 33px;
                             }
-                        }
-                        .shop__item-total-price {
                         }
                     }
 
@@ -166,17 +162,17 @@
     }
 
     .cart__name {
-        width: 350px;
+        width: 38.89%;
         cursor: pointer;
     }
     .cart__price {
-        width: 120px;
+        width: 13.33%;
     }
     .cart__quantity {
-        width: 160px;
+        width: 17.78%;
     }
     .cart__total-price {
-        width: 120px;
+        width: 13.33%;
     }
     .cart__action {
         flex: 1;

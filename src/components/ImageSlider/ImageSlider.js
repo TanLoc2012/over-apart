@@ -11,13 +11,19 @@ import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons
 import { Link } from 'react-router-dom';
 
 function ImageSlider({ child }) {
+    let silder = [];
+    child.productInfos.map((product) => {
+        silder.push(
+            <SwiperSlide className="swiper-slide">
+                <ProductCard product={product}></ProductCard>
+            </SwiperSlide>,
+        );
+    });
     return (
         <div className="container img__slider">
             <div className="img__slider-header">
                 <div className="header__text-left">{child.headerText}</div>
-                <Link to={child.pathHeaderText} className="header__text-right">
-                    Xem thêm
-                </Link>
+                <Link to={child.pathHeaderText}>Xem thêm</Link>
             </div>
             <hr className="img__slider-hr" />
             <Swiper
@@ -27,13 +33,7 @@ function ImageSlider({ child }) {
                 modules={[Pagination]}
                 pagination={{ clickable: true }}
             >
-                <div className="swiper-wrapper">
-                    {child.productInfos.map((product) => {
-                        <SwiperSlide className="swiper-slide">
-                            <ProductCard product={product}></ProductCard>
-                        </SwiperSlide>;
-                    })}
-                </div>
+                <div className="swiper-wrapper">{silder}</div>
                 <div className="swiper-button-next">
                     <FontAwesomeIcon icon={faChevronRight} style={{ color: 'white' }}></FontAwesomeIcon>
                 </div>

@@ -1,0 +1,19 @@
+.account__sidebar {
+    width: 20%;
+    .account__sidebar-avatar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 6px;
+    }
+    .account__sidebar-value {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .account__sidebar-value-icon {
+            width: 48px;
+            margin-right: 8px;
+            font-size: 16px;
+        }
+    }
+}

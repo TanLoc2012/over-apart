@@ -9,6 +9,10 @@ import SampleDesignPage from './pages/customer/SampleDesignPage';
 import RealProjectPage from './pages/customer/RealProjectPage';
 import MyProjectPage from './pages/customer/MyProjectPage';
 import InfoProductPage from './pages/customer/InfoProduct';
+import ProfilePage from './pages/customer/MyAccount/ProfilePage';
+import MyAddressPage from './pages/customer/MyAccount/MyAddressPage';
+import MyPurchasePage from './pages/customer/MyAccount/MyPurchasePage';
+import FavoritesPage from './pages/customer/MyAccount/FavoritesPage';
 
 function App() {
     return (
@@ -23,6 +27,10 @@ function App() {
                 <Route path="/real-project" element={<RealProjectPage />}></Route>
                 <Route path="/my-project" element={<MyProjectPage />}></Route>
                 <Route path="/product" element={<InfoProductPage />}></Route>
+                <Route path="/profile" element={<ProfilePage />}></Route>
+                <Route path="/address" element={<MyAddressPage />}></Route>
+                <Route path="/my-purchase" element={<MyPurchasePage />}></Route>
+                <Route path="/my-favorites" element={<FavoritesPage />}></Route>
             </Routes>
         </Router>
     );

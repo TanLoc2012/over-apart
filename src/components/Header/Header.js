@@ -31,7 +31,7 @@ function Header() {
                     <Link to="/sample-design" className="header__nav-item">
                         Thiết kế mẫu
                     </Link>
-                    <Link to="/real-design" className="header__nav-item">
+                    <Link to="/real-project" className="header__nav-item">
                         Dự án thực tế
                     </Link>
                 </nav>
@@ -49,39 +49,41 @@ function Header() {
                         className="header__nav-search"
                         onClick={() => handleDisplaySearch()}
                     />
-                    <div className="header__nav__container-cart">
-                        <Link to="/cart">
-                            <FontAwesomeIcon icon={faCartShopping} className="header__nav__cart" />
-                        </Link>
-                        <div className="header__nav__cart__number">0</div>
-                    </div>
-                    <div className="header__nav-cart-list">
-                        <div className="header__nav-cart-list-header">Sản phẩm mới thêm</div>
-                        <div className="header__nav-cart-list-body">
-                            <ListCartItem></ListCartItem>
-                            <ListCartItem></ListCartItem>
-                            <ListCartItem></ListCartItem>
-                            <ListCartItem></ListCartItem>
-                            <ListCartItem></ListCartItem>
-                            <ListCartItem></ListCartItem>
+                    <div className="header__cart-wrapper">
+                        <div className="header__nav__container-cart">
+                            <Link to="/cart">
+                                <FontAwesomeIcon icon={faCartShopping} className="header__nav__cart" />
+                            </Link>
+                            <div className="header__nav__cart__number">0</div>
                         </div>
-                        <div className="header__nav-cart-list-footer">
-                            <div>
-                                <span>Tổng tiền:</span>
-                                <span style={{ color: 'red' }}> 4.500.000 đ</span>
+                        <div className="header__nav-cart-list">
+                            <div className="header__nav-cart-list-header">Sản phẩm mới thêm</div>
+                            <div className="header__nav-cart-list-body">
+                                <ListCartItem></ListCartItem>
+                                <ListCartItem></ListCartItem>
+                                <ListCartItem></ListCartItem>
+                                <ListCartItem></ListCartItem>
+                                <ListCartItem></ListCartItem>
+                                <ListCartItem></ListCartItem>
                             </div>
-                            <button>Xem Giỏ Hàng</button>
+                            <div className="header__nav-cart-list-footer">
+                                <div>
+                                    <span>Tổng tiền:</span>
+                                    <span style={{ color: 'red' }}> 4.500.000 đ</span>
+                                </div>
+                                <button>Xem Giỏ Hàng</button>
+                            </div>
                         </div>
                     </div>
-                    <div className="header__nav__authen">
+                    {/* <div className="header__nav__authen">
                         <Link to="/register" className="header__nav__authen-item header__nav__authen-seperate">
                             Đăng ký
                         </Link>
                         <Link to="/login" className="header__nav__authen-item">
                             Đăng nhập
                         </Link>
-                    </div>
-                    {/* <Avatar /> */}
+                    </div> */}
+                    <Avatar child={{ imgWidth: '36px', href: '/', img: images.avatar }} />
                 </nav>
             </header>
         </div>

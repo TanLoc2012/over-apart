@@ -4,11 +4,12 @@
     top: 0;
     z-index: 1000;
     width: 100%;
+
     .header {
         display: flex;
         justify-content: space-between;
         height: var(--heigth-header);
-
+        align-items: stretch;
         .header__logo {
             margin: auto 0;
             img {
@@ -40,7 +41,7 @@
                 background-color: white;
                 position: absolute;
                 top: 100%;
-                right: 60%;
+                right: 31%;
                 z-index: 10000;
                 gap: 4px;
                 border-radius: 2px;
@@ -92,35 +93,42 @@
                     }
                 }
             }
-            .header__nav__container-cart {
-                &:hover+.header__nav-cart-list{
+            .header__cart-wrapper {
+                height: 100%;
+                &:hover {
+                    .header__nav-cart-list {
                         display: block;
+                    }
                 }
-                height: 24px;
-                width: 24px;
-                position: relative;
-                &:hover + .header__nav-cart-list {
-                    display: block;
-                }
-                .header__nav__cart {
+                .header__nav__container-cart {
+                    margin-top: 19px;
                     height: 24px;
                     width: 24px;
-                }
-                .header__nav__cart__number {
-                    width: 20px;
-                    height: 20px;
-                    background-color: #fdfdfd;
-                    border-radius: 40px;
-                    text-align: center;
-                    position: absolute;
-                    font-size: 1.3rem;
-                    bottom: 10px;
-                    left: 14px;
-                    color: rgb(36, 36, 36);
-                    font-weight: 500;
-                    user-select: none;
+                    position: relative;
+                    &:hover + .header__nav-cart-list {
+                        display: block;
+                    }
+                    .header__nav__cart {
+                        height: 24px;
+                        width: 24px;
+                    }
+                    .header__nav__cart__number {
+                        width: 20px;
+                        height: 20px;
+                        background-color: #fdfdfd;
+                        border-radius: 40px;
+                        text-align: center;
+                        position: absolute;
+                        font-size: 1.3rem;
+                        bottom: 10px;
+                        left: 14px;
+                        color: rgb(36, 36, 36);
+                        font-weight: 500;
+                        user-select: none;
+                    }
                 }
             }
+
             .header__nav__authen {
                 display: flex;
                 gap: 16px;

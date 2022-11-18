@@ -22,19 +22,6 @@
                 .list__product-header-right-text {
                     font-weight: 500;
                 }
-                .list__product-header-right-btn {
-                    flex: 1;
-                    cursor: pointer;
-                    height: 34px;
-                    padding: 6px 12px;
-                    border: 1px solid #ccc;
-                    background-color: #fff;
-                    border-radius: 4px;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    gap: 8px;
-                }
             }
         }
         .list__product-body {
@@ -74,4 +61,18 @@
             }
         }
     }
+}
+
+.list__product-header-right-btn {
+    flex: 1;
+    cursor: pointer;
+    height: 34px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
 }

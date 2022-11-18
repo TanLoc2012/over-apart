@@ -9,16 +9,25 @@ import { Pagination, Navigation } from 'swiper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import ApartmentCard from '../ApartmentCard/ApartmentCard';
 
 function ImageSlider({ child }) {
     let silder = [];
-    child.productInfos.map((product) => {
-        silder.push(
-            <SwiperSlide className="swiper-slide">
-                <ProductCard product={product}></ProductCard>
-            </SwiperSlide>,
-        );
-    });
+    const component = child.component
+        ? child.productInfos.map((product) => {
+              silder.push(
+                  <SwiperSlide className="swiper-slide">
+                      <ApartmentCard></ApartmentCard>
+                  </SwiperSlide>,
+              );
+          })
+        : child.productInfos.map((product) => {
+              silder.push(
+                  <SwiperSlide className="swiper-slide">
+                      <ProductCard product={product}></ProductCard>
+                  </SwiperSlide>,
+              );
+          });
     return (
         <div className="container img__slider">
             <div className="img__slider-header">

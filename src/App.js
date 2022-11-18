@@ -6,7 +6,7 @@ import CartPage from './pages/customer/CartPage';
 import ShopPage from './pages/customer/ShopPage';
 import FurniturePage from './pages/customer/FurniturePage';
 import SampleDesignPage from './pages/customer/SampleDesignPage';
-import RealProjectPage from './pages/customer/RealProjectPage';
+import RealProjectPage from './pages/customer/RealProject/RealProjectPage';
 import MyProjectPage from './pages/customer/MyProjectPage';
 import InfoProductPage from './pages/customer/InfoProduct';
 import ProfilePage from './pages/customer/MyAccount/ProfilePage';
@@ -30,7 +30,7 @@ function App() {
                 <Route path="/profile" element={<ProfilePage />}></Route>
                 <Route path="/address" element={<MyAddressPage />}></Route>
                 <Route path="/my-purchase" element={<MyPurchasePage />}></Route>
-                <Route path="/my-favorites" element={<FavoritesPage />}></Route>
+                <Route path="/my-wishlist" element={<FavoritesPage />}></Route>
             </Routes>
         </Router>
     );

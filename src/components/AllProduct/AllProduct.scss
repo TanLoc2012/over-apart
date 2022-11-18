@@ -1,11 +1,14 @@
 .container_shop-all-product {
     background-color: white;
     display: flex;
-
-    .list__product {
+    .container__list-product {
         width: 81%;
+
+        display: flex;
+        flex-direction: column;
         .list__product-header {
             margin: 13px;
+            margin-bottom: 0px;
             display: flex;
             justify-content: space-between;
             .list__product-header-left {
@@ -24,9 +27,9 @@
                 }
             }
         }
-        .list__product-body {
-            margin-bottom: 12px;
-        }
+    }
+    .list__product-body {
+        margin-bottom: 12px;
     }
 
     .all__product-filter {

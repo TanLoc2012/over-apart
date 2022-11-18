@@ -34,6 +34,9 @@ function Header() {
                     <Link to="/real-project" className="header__nav-item">
                         Dự án thực tế
                     </Link>
+                    <Link to="/my-project" className="header__nav-item">
+                        Thiết kế của tôi
+                    </Link>
                 </nav>
 
                 <nav className="header__nav">

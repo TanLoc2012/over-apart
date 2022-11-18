@@ -16,7 +16,7 @@ function ProductCard({ product }) {
     return (
         <div className="product__cart">
             <div className="product__cart-image">
-                <Link to="/">
+                <Link to="">
                     <img src={product.img} alt="Product image"></img>
                 </Link>
             </div>

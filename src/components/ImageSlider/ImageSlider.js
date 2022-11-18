@@ -17,7 +17,7 @@ function ImageSlider({ child }) {
         ? child.productInfos.map((product) => {
               silder.push(
                   <SwiperSlide className="swiper-slide">
-                      <ApartmentCard></ApartmentCard>
+                      <ApartmentCard product={product}></ApartmentCard>
                   </SwiperSlide>,
               );
           })
@@ -32,7 +32,12 @@ function ImageSlider({ child }) {
         <div className="container img__slider">
             <div className="img__slider-header">
                 <div className="header__text-left">{child.headerText}</div>
-                <Link to={child.pathHeaderText}>Xem thêm</Link>
+                <Link
+                    to={child.pathHeaderText}
+                    style={{ display: child.isDisplayShowMore ? child.isDisplayShowMore : '' }}
+                >
+                    Xem thêm
+                </Link>
             </div>
             <hr className="img__slider-hr" />
             <Swiper

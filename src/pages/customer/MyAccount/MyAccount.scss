@@ -187,17 +187,7 @@
     display: flex;
     .my__purchase {
         flex: 1;
-        .my__purchase-state-item {
-            width: 33.3%;
-            padding: 14px 20px;
-            background-color: white;
-            font-size: 1.8rem;
-            cursor: pointer;
-        }
-        .my__purchase-state-item-active {
-            color: #3b9fc3;
-            border-bottom: 1px solid #3b9fc3;
-        }
+
         .my__purchase-search {
             background-color: white;
             margin-top: 16px;
@@ -322,4 +312,16 @@
         flex: 0;
         min-width: 130px;
     }
+}
+
+.my__purchase-state-item {
+    width: 33.3%;
+    padding: 14px 20px;
+    background-color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+.my__purchase-state-item-active {
+    color: #3b9fc3;
+    border-bottom: 1px solid #3b9fc3;
 }

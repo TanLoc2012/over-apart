@@ -1,5 +1,4 @@
 import './AllProduct.scss';
-import ProductCard from '../ProductCard/ProductCard';
 
 import Pagination from '../Pagination/Pagination';
 

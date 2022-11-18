@@ -3,6 +3,7 @@ import ProductCard from '../ProductCard/ProductCard';
 import './MyProjectCard.scss';
 
 import { Responsive, WidthProvider } from 'react-grid-layout';
+import images from '../../assets/images';
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 function ListMyProjectCard() {
@@ -39,7 +40,7 @@ function ListMyProjectCard() {
                 <MyProjectCard></MyProjectCard>
             </div>
             <div key="6">
-                <MyProjectCard></MyProjectCard>
+                <img style={{ width: '380px', height: '296px' }} src={images.m1} alt="My Project image"></img>
             </div>
         </ResponsiveGridLayout>
     );

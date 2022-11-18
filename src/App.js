@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/customer/HomePage';
+import HomePage from './pages/customer/HomePage/HomePage';
 import LoginPage from './pages/login/LoginPage';
 import CartPage from './pages/customer/CartPage';
 import ShopPage from './pages/customer/ShopPage';
@@ -13,6 +13,7 @@ import ProfilePage from './pages/customer/MyAccount/ProfilePage';
 import MyAddressPage from './pages/customer/MyAccount/MyAddressPage';
 import MyPurchasePage from './pages/customer/MyAccount/MyPurchasePage';
 import FavoritesPage from './pages/customer/MyAccount/FavoritesPage';
+import ApartmentDetailPage from './pages/customer/ApartmentDetail/ApartmentDetailPage';
 
 function App() {
     return (
@@ -31,6 +32,7 @@ function App() {
                 <Route path="/address" element={<MyAddressPage />}></Route>
                 <Route path="/my-purchase" element={<MyPurchasePage />}></Route>
                 <Route path="/my-wishlist" element={<FavoritesPage />}></Route>
+                <Route path="/apartment-detail" element={<ApartmentDetailPage />}></Route>
             </Routes>
         </Router>
     );

@@ -60,7 +60,7 @@ function AccountSideBar() {
                     <FontAwesomeIcon icon={faClipboard} className="account__sidebar-value-icon"></FontAwesomeIcon>
                     <span>Đơn mua</span>
                 </Link>
-                <Link to="/my-favorites">
+                <Link to="/my-wishlist">
                     <FontAwesomeIcon icon={faHeart} className="account__sidebar-value-icon"></FontAwesomeIcon>
                     <span>Mục yêu thích</span>
                 </Link>

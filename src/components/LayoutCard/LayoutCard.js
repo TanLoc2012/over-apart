@@ -8,8 +8,6 @@ function ApartmentCard({ product }) {
         : {
               img: images.a1,
               productName: 'Chung cư Vinhome Quận 9',
-              description1: 'Chủ đầu tư: Vinhome',
-              description2: 'Địa chỉ: Quận 9, TP Hồ Chí Minh',
           };
 
     return (
@@ -21,8 +19,8 @@ function ApartmentCard({ product }) {
             </div>
             <div className="apartment__card-info">
                 <p className="apartment__card-info-name">{product.productName}</p>
-                <p>{product.description1}</p>
-                <p>{product.description2}</p>
+                <p>Chủ đầu tư: Vinhome</p>
+                <p>Địa chỉ: Quận 9, TP Hồ Chí Minh</p>
             </div>
         </div>
     );

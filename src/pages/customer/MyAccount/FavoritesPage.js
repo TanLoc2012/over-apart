@@ -46,7 +46,7 @@ function FavoritesPage() {
                     <div className="info-header">
                         <div>Mục Yêu Thích</div>
                         <button className="my__favorites-btn list__product-header-right-btn">
-                            <span>Thiết kế</span>
+                            <span>Nội thất</span>
                             <FontAwesomeIcon icon={faChevronDown}></FontAwesomeIcon>
                         </button>
                     </div>

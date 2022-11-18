@@ -5,6 +5,7 @@ import AllProduct from '../../components/AllProduct/AllProduct';
 import HeaderText from '../../components/HeaderText/HeaderText';
 import ImageSlider from '../../components/ImageSlider/ImageSlider';
 import images from '../../assets/images';
+import ProductCard from '../../components/ProductCard/ProductCard';
 
 function SampleDesignPage() {
     const breadcrumb = [
@@ -23,69 +24,83 @@ function SampleDesignPage() {
         pathHeaderText: '',
         productInfos: [
             {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona 1',
-                rating: 5,
+                img: images.p1,
+                productName: 'Photo - Blue kitchenb 1',
+                isVIP: 'FREE',
                 sold: 20,
                 price: '6.900.000 đ',
             },
             {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona 2',
-                rating: 5,
+                img: images.p1,
+                productName: 'Photo - Blue kitchen 2',
+                isVIP: 'FREE',
                 sold: 20,
                 price: '6.900.000 đ',
             },
             {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona 3',
-                rating: 5,
+                img: images.p1,
+                productName: 'Photo - Blue kitchen 3',
+                isVIP: 'FREE',
                 sold: 20,
                 price: '6.900.000 đ',
             },
             {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona',
-                rating: 5,
+                img: images.p1,
+                productName: 'Photo - Blue kitchen',
+                isVIP: 'FREE',
                 sold: 20,
                 price: '6.900.000 đ',
             },
             {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona',
-                rating: 5,
+                img: images.p1,
+                productName: 'Photo - Blue kitchen',
+                isVIP: 'FREE',
                 sold: 20,
                 price: '6.900.000 đ',
             },
             {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona',
-                rating: 5,
+                img: images.p1,
+                productName: 'Photo - Blue kitchen',
+                isVIP: 'FREE',
                 sold: 20,
                 price: '6.900.000 đ',
             },
             {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona',
-                rating: 5,
+                img: images.p1,
+                productName: 'Photo - Blue kitchen',
+                isVIP: 'FREE',
                 sold: 20,
                 price: '6.900.000 đ',
             },
             {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona 10',
-                rating: 5,
+                img: images.p1,
+                productName: 'Photo - Blue kitchen 10',
+                isVIP: 'FREE',
                 sold: 20,
                 price: '6.900.000 đ',
             },
             {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona 11',
-                rating: 5,
+                img: images.p1,
+                productName: 'Photo - Blue kitchen 11',
+                isVIP: 'FREE',
                 sold: 20,
                 price: '6.900.000 đ',
             },
         ],
+    };
+
+    const listCard = {
+        component: (
+            <ProductCard
+                product={{
+                    img: images.p1,
+                    productName: 'Photo - Blue kitchen 11',
+                    isVIP: 'FREE',
+                    sold: 20,
+                    price: '6.900.000 đ',
+                }}
+            ></ProductCard>
+        ),
     };
     return (
         <div>
@@ -94,7 +109,7 @@ function SampleDesignPage() {
             <HeaderText></HeaderText>
             <ImageSlider child={designFeautured}></ImageSlider>
             <div className="container">
-                <AllProduct></AllProduct>
+                <AllProduct listCard={listCard}></AllProduct>
             </div>
             <Footer></Footer>
         </div>

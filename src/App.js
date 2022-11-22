@@ -14,6 +14,7 @@ import MyAddressPage from './pages/customer/MyAccount/MyAddressPage';
 import MyPurchasePage from './pages/customer/MyAccount/MyPurchasePage';
 import FavoritesPage from './pages/customer/MyAccount/FavoritesPage';
 import ApartmentDetailPage from './pages/customer/ApartmentDetail/ApartmentDetailPage';
+import Design2D from './pages/customer/Design2D/Design2D';
 
 function App() {
     return (
@@ -33,6 +34,7 @@ function App() {
                 <Route path="/my-purchase" element={<MyPurchasePage />}></Route>
                 <Route path="/my-wishlist" element={<FavoritesPage />}></Route>
                 <Route path="/apartment-detail" element={<ApartmentDetailPage />}></Route>
+                <Route path="/design2d" element={<Design2D />}></Route>
             </Routes>
         </Router>
     );

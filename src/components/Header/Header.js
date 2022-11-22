@@ -74,7 +74,9 @@ function Header() {
                                     <span>Tổng tiền:</span>
                                     <span style={{ color: 'red' }}> 4.500.000 đ</span>
                                 </div>
-                                <button>Xem Giỏ Hàng</button>
+                                <Link to="/cart">
+                                    <button>Xem Giỏ Hàng</button>
+                                </Link>
                             </div>
                         </div>
                     </div>

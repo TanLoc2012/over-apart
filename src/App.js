@@ -14,6 +14,7 @@ import MyAddressPage from './pages/customer/MyAccount/MyAddressPage';
 import MyPurchasePage from './pages/customer/MyAccount/MyPurchasePage';
 import FavoritesPage from './pages/customer/MyAccount/FavoritesPage';
 import ApartmentDetailPage from './pages/customer/ApartmentDetail/ApartmentDetailPage';
+import InfoProjectPage from './pages/customer/InfoProject';
 
 function App() {
     return (
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/real-project" element={<RealProjectPage />}></Route>
                 <Route path="/my-project" element={<MyProjectPage />}></Route>
                 <Route path="/product" element={<InfoProductPage />}></Route>
+                <Route path="/project" element={<InfoProjectPage />}></Route>
                 <Route path="/profile" element={<ProfilePage />}></Route>
                 <Route path="/address" element={<MyAddressPage />}></Route>
                 <Route path="/my-purchase" element={<MyPurchasePage />}></Route>

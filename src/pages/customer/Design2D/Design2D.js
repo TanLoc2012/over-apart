@@ -13,6 +13,8 @@ function Design2D() {
     const xSteps = Math.round(1900 / stepSize),
         ySteps = Math.round(700 / stepSize);
     let verticalLines = [];
+    const url = images.d21;
+    const [image] = useImage(url);
     for (let i = 0; i <= xSteps; i++) {
         verticalLines.push(
             <Line x={i * stepSize} points={[0, 0, 0, 700]} stroke="rgba(0, 0, 0, 0.2)" strokeWidth={1} />,
@@ -33,8 +35,7 @@ function Design2D() {
         ]);
         console.log(layerItems);
     };
-    const url = images.d21;
-    const [image] = useImage(url);
+
     return (
         <div className="design2d">
             <div className="header"></div>
@@ -67,7 +68,8 @@ function Design2D() {
                 <Layer>
                     {verticalLines}
                     {horizontalLines}
-                    {layerItems.map((item) => item)}
+                    {layerItems.map((item) => item)} 
+                    <Image image={image} draggable x={500} y={200} style={{ maxWidth: '100px' }} />
                 </Layer>
             </Stage>
         </div>

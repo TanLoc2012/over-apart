@@ -69,7 +69,7 @@ function ApartmentDetailPage() {
                     img: images.p1,
                     productName: 'Photo - Blue kitchen',
                     isVIP: 'FREE',
-                    sold: 20,
+                    rating: 5,
                     price: '6.900.000 đ',
                 }}
             ></ProductCard>

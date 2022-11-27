@@ -2,11 +2,20 @@ import { Fragment } from 'react';
 import Footer from '../../../components/Footer/Footer';
 import Header from '../../../components/Header/Header';
 import images from '../../../assets/images';
+import ProductCard from '../../../components/ProductCard/ProductCard';
 import './HomePage.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlay } from '@fortawesome/free-regular-svg-icons';
 
 function HomePage() {
+    const product = {
+        img: images.p1,
+        productName: 'Phòng khách Châu Âu',
+        isVIP: 'VIP',
+        rating: 5,
+        price: '6.900.000 đ',
+    };
+
     return (
         <Fragment>
             <Header></Header>
@@ -106,7 +115,37 @@ function HomePage() {
                         </div>
                     </div>
                 </div>
-                <div className="home__footer-wrapper"></div>
+                <div className="home__footer-wrapper">
+                    <div className="container home__footer">
+                        <div className="home__footer-header">
+                            <div className="">Dự án thực tế</div>
+                            <div className="home__footer-header-active">Thiết kế mẫu</div>
+                            <div className="">Dự đoán xu hướng</div>
+                        </div>
+                        <div className="home__footer-body">
+                            <div className="footer__body-img">
+                                <img src={images.p1} alt="Product image"></img>
+                                <img src={images.p1} alt="Product image"></img>
+                            </div>
+                            <div className="footer__body-list-card-wrapper">
+                                <div className="footer__body-list-card">
+                                    <ProductCard product={product}></ProductCard>
+                                    <ProductCard product={product}></ProductCard>
+                                    <ProductCard product={product}></ProductCard>
+                                </div>
+                                <div className="footer__body-list-card">
+                                    <ProductCard product={product}></ProductCard>
+                                    <ProductCard product={product}></ProductCard>
+                                    <ProductCard product={product}></ProductCard>
+                                </div>
+                                <div className="footer__body-show-more">
+                                    <button>Xem thêm</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="header__banner"></div>
+                    </div>
+                </div>
             </div>
             <Footer></Footer>
         </Fragment>

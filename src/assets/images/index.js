@@ -8,6 +8,7 @@ const images = {
     l1: require('./../../assets/images/l1.jpg'),
     h1: require('./../../assets/images/header.jpeg'),
     h2: require('./../../assets/images/h2.jpg'),
+    d21: require('./../../assets/images/(10).png'),
 };
 
 export default images;

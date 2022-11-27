@@ -26,7 +26,7 @@ function ProductCard({ product }) {
                     <div className="product__card-info-rating">★★★★★</div>
                     <div className="product__card-info-seperate"></div>
 
-                    {product.rating ? (
+                    {product.sold ? (
                         <div className="product__card-info-quantity">Đã bán {product.sold}</div>
                     ) : (
                         <div className="product__card-info-quantity">{product.isVIP}</div>

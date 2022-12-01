@@ -1,14 +1,15 @@
 import './Design2D.scss';
-import { Stage, Layer, Line, Image } from 'react-konva';
+import { Stage, Layer, Line, Image, Rect } from 'react-konva';
 import Rec2D from '../../../2D/Rec2D';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import images from '../../../assets/images';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import URLImage from '../../../2D/LoadImage';
 import useImage from 'use-image';
 
 function Design2D() {
+    const shapeRef = useRef(null);
     const stepSize = 40; // set a value for the grid step gap.
     const xSteps = Math.round(1900 / stepSize),
         ySteps = Math.round(700 / stepSize);
@@ -30,8 +31,9 @@ function Design2D() {
     const handleAddWall = (id) => {
         setLayerItems([
             ...layerItems,
-            <Rec2D></Rec2D>,
-            <Image image={image} draggable x={500} y={200} style={{ maxWidth: '100px' }} />,
+            <Rec2D>
+                <Image image={image} draggable x={500} y={200} style={{ maxWidth: '100px' }} ref={shapeRef}/>
+            </Rec2D>
         ]);
         console.log(layerItems);
     };
@@ -69,7 +71,6 @@ function Design2D() {
                     {verticalLines}
                     {horizontalLines}
                     {layerItems.map((item) => item)} 
-                    <Image image={image} draggable x={500} y={200} style={{ maxWidth: '100px' }} />
                 </Layer>
             </Stage>
         </div>

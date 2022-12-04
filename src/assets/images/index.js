@@ -9,6 +9,8 @@ const images = {
     h1: require('./../../assets/images/header.jpeg'),
     h2: require('./../../assets/images/h2.jpg'),
     d21: require('./../../assets/images/(10).png'),
+    square: require('./../../assets/images/square.jpg'),
+    logoWhite: require('./../../assets/images/logo-white.jpg'),
 };
 
 export default images;

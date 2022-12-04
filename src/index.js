@@ -3,14 +3,18 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import GlobalStyle from './components/GlobalStyle/GlobalStyle';
+import { store } from './store';
+import { Provider } from 'react-redux';
 import '/node_modules/react-grid-layout/css/styles.css';
 import '/node_modules/react-resizable/css/styles.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <GlobalStyle>
-        <App />
-    </GlobalStyle>,
+    <Provider store={store}>
+        <GlobalStyle>
+            <App />
+        </GlobalStyle>
+    </Provider>,
 );
 
 // If you want to start measuring performance in your app, pass a function

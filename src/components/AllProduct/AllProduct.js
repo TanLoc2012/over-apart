@@ -1,8 +1,6 @@
 import './AllProduct.scss';
 import Filter from './Filter';
 import ListProduct from './ListProduct';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import ProductCard from '../ProductCard/ProductCard';
 import images from '../../assets/images';
 
@@ -30,10 +28,12 @@ function AllProduct({ headerTitle, listCard }) {
                     <div className="list__product-header-left">{headerTitle}</div>
                     <div className="list__product-header-right">
                         <div className="list__product-header-right-text">Sắp xếp theo</div>
-                        <button className="list__product-header-right-btn">
-                            <span>Mới Nhất</span>
-                            <FontAwesomeIcon icon={faChevronDown}></FontAwesomeIcon>
-                        </button>
+                        <select className="select-wrapper">
+                            <option value="lime">Cũ nhất</option>
+                            <option selected value="coconut">
+                                Mới Nhất
+                            </option>
+                        </select>
                     </div>
                 </div>
                 <ListProduct listCard={listCard}></ListProduct>

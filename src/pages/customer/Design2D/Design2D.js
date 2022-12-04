@@ -2,12 +2,13 @@ import './Design2D.scss';
 import { Stage, Layer, Line, Image, Rect } from 'react-konva';
 import Rec2D from '../../../2D/Rec2D';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faSave } from '@fortawesome/free-solid-svg-icons';
 import images from '../../../assets/images';
 import { useState, useRef, useEffect } from 'react';
 import URLImage from '../../../2D/LoadImage';
 import useImage from 'use-image';
 import Konva from 'konva';
+import Layout2D from './Layout2D';
 
 function Design2D() {
     const shapeRef = useRef(null);
@@ -16,8 +17,6 @@ function Design2D() {
     const xSteps = Math.round(1900 / stepSize),
         ySteps = Math.round(700 / stepSize);
     let verticalLines = [];
-    const url = images.d21;
-    const [image] = useImage(url);
     for (let i = 0; i <= xSteps; i++) {
         verticalLines.push(
             <Line x={i * stepSize} points={[0, 0, 0, 700]} stroke="rgba(0, 0, 0, 0.2)" strokeWidth={1} />,
@@ -30,14 +29,23 @@ function Design2D() {
         );
     }
     const [layerItems, setLayerItems] = useState([]);
+    const [display, setDisplay] = useState(true);
     const handleAddWall = (id) => {
         setLayerItems([
             ...layerItems,
             <Rec2D>
-                <Image image={image} x={500} y={200} style={{ maxWidth: '100px' }} ref={shapeRef}/>
-            </Rec2D>
+                <Image image={image} draggable x={500} y={200} style={{ maxWidth: '100px' }} ref={shapeRef} />
+            </Rec2D>,
         ]);
-        console.log(layerItems);
+    };
+
+    const url = images.d21;
+    const [image] = useImage(url);
+    var json;
+    const handleSave = () => {
+        var json = stageRef.current.toJSON();
+        var stage1 = Konva.Node.create(json, 'con');
+        setDisplay(false);
     };
     return (
         <div className="design2d">
@@ -46,8 +54,8 @@ function Design2D() {
                 <div className="toolbar__item">
                     <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
                 </div>
-                <div className="toolbar__item">
-                    <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
+                <div className="toolbar__item" onClick={handleSave}>
+                    <FontAwesomeIcon icon={faSave}></FontAwesomeIcon>
                 </div>
                 <div className="toolbar__item">
                     <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
@@ -62,8 +70,8 @@ function Design2D() {
             <div className="toolbar__content">
                 <div className="">
                     <div className="">
-                        <img src={images.f1} alt="aa" onClick={() => handleAddWall(1)}></img>
-                        <img src={images.p1} alt="aa" onClick={() => handleAddWall(1)}></img>
+                        <img src={images.square} alt="aa" onClick={() => handleAddWall(1)}></img>
+                        <img src={images.d21} alt="aa" onClick={() => handleAddWall(1)}></img>
                     </div>
                 </div>
             </div>
@@ -71,7 +79,7 @@ function Design2D() {
                 <Layer>
                     {verticalLines}
                     {horizontalLines}
-                    {layerItems.map((item) => item)} 
+                    {layerItems.map((item) => item)}
                 </Layer>
             </Stage>
         </div>

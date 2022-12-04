@@ -1,4 +1,5 @@
 import './AllProduct.scss';
+import { Link } from 'react-router-dom';
 
 import Pagination from '../Pagination/Pagination';
 
@@ -20,6 +21,9 @@ function ListProduct({ listCard }) {
         { i: '11', x: 6, y: 2, w: 3, h: 1 },
         { i: '12', x: 9, y: 2, w: 3, h: 1 },
     ];
+
+    console.log();
+
     return (
         <div className="list__product">
             <ResponsiveGridLayout
@@ -30,18 +34,29 @@ function ListProduct({ listCard }) {
                 rowHeight={270}
                 compactType="horizontal"
             >
-                <div key="1">{listCard.component}</div>
-                <div key="2">{listCard.component}</div>
-                <div key="3">{listCard.component}</div>
-                <div key="4">{listCard.component}</div>
-                <div key="5">{listCard.component}</div>
-                <div key="6">{listCard.component}</div>
-                <div key="7">{listCard.component}</div>
-                <div key="8">{listCard.component}</div>
-                <div key="9">{listCard.component}</div>
-                <div key="10">{listCard.component}</div>
-                <div key="11">{listCard.component}</div>
-                <div key="12">{listCard.component}</div>
+                {/* {listCard.component.map((card, key) => {
+                    <div key={key + 1}>{card}</div>;
+                })} */}
+
+                <div key="1">
+                    <Link to={`/product/${listCard.component[0].props.product.id}`}>{listCard.component[0]}</Link>
+                </div>
+                <div key="2">
+                    <Link to={`/product/${listCard.component[1].props.product.id}`}>{listCard.component[1]}</Link>
+                </div>
+                <div key="3">
+                    <Link to={`/product/${listCard.component[2].props.product.id}`}>{listCard.component[2]}</Link>
+                </div>
+                <div key="4">
+                    <Link to={`/product/${listCard.component[3].props.product.id}`}>{listCard.component[3]}</Link>
+                </div>
+                <div key="5">
+                    <Link to={`/product/${listCard.component[4].props.product.id}`}>{listCard.component[4]}</Link>
+                </div>
+                <div key="6">{listCard.component[5]}</div>
+                <div key="7">{listCard.component[6]}</div>
+                <div key="8">{listCard.component[7]}</div>
+                <div key="9">{listCard.component[8]}</div>
             </ResponsiveGridLayout>
             <Pagination></Pagination>
         </div>

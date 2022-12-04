@@ -1,0 +1,112 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "img": "https://baya.vn/media/catalog/product/cache/d845c433d3e40faef420f5a1e6d21ea7/s/u/sund_combo_desk_baya_6000238.jpg",
+            "productName": "BỘ BÀN HỌC SUND",
+            "price": 2000000,
+            "rating": 5,
+            "sold": 20,
+            "like": 5,
+            "comment": 20,
+            "code": "2000",
+            "shop": "1994 store"
+        },
+        {
+            "id": 2,
+            "img": "https://baya.vn/media/catalog/product/cache/d845c433d3e40faef420f5a1e6d21ea7/V/A/VAGABOND_Table_UMA_1094800_1.jpg",
+            "productName": "BÀN VAGABOND",
+            "price": 1743000,
+            "rating": 5,
+            "sold": 20,
+            "like": 5,
+            "comment": 20,
+            "code": "2000",
+            "shop": "1994 store"
+        },
+        {
+            "id": 3,
+            "img": "https://baya.vn/media/catalog/product/cache/d845c433d3e40faef420f5a1e6d21ea7/i/b/ibis_dining_table_baya_2001356_1.jpg",
+            "productName": "BÀN ĂN BILBO",
+            "price": 3992000,
+            "rating": 5,
+            "sold": 20,
+            "like": 5,
+            "comment": 20,
+            "code": "2000",
+            "shop": "1994 store"
+        },
+        {
+            "id": 4,
+            "img": "https://baya.vn/media/catalog/product/cache/d845c433d3e40faef420f5a1e6d21ea7/s/o/solana_outdoor_table_baya_2001351.jpg",
+            "productName": "BÀN NGOÀI TRỜI SOLANA",
+            "price": 3192000,
+            "rating": 5,
+            "sold": 20,
+            "like": 5,
+            "comment": 20,
+            "code": "2000",
+            "shop": "1994 store"
+        },
+        {
+            "id": 5,
+            "img": "https://baya.vn/media/catalog/product/cache/d845c433d3e40faef420f5a1e6d21ea7/v/e/verona_dining_table_baya_2000485.jpg",
+            "productName": "BÀN ĂN VERONA",
+            "price": 1592000,
+            "rating": 5,
+            "sold": 20,
+            "like": 5,
+            "comment": 20,
+            "code": "2000",
+            "shop": "Peak store"
+        },
+        {
+            "id": 6,
+            "img": "https://baya.vn/media/catalog/product/cache/d845c433d3e40faef420f5a1e6d21ea7/v/e/verona_dining_table_baya_2000470.jpg",
+            "productName": "BÀN ĂN VERONA 2",
+            "price": 1592000,
+            "rating": 5,
+            "sold": 20,
+            "like": 5,
+            "comment": 20,
+            "code": "2000",
+            "shop": "Peak store"
+        },
+        {
+            "id": 7,
+            "img": "https://baya.vn/media/catalog/product/cache/d845c433d3e40faef420f5a1e6d21ea7/6/0/6000085_1_.jpg",
+            "productName": "BỘ BÀN ĂN 4 GHẾ PALL-MALL",
+            "price": 6890000,
+            "rating": 5,
+            "sold": 20,
+            "like": 5,
+            "comment": 20,
+            "code": "2000",
+            "shop": "Peak store"
+        },
+        {
+            "id": 8,
+            "img": "https://baya.vn/media/catalog/product/cache/d845c433d3e40faef420f5a1e6d21ea7/a/n/anne_dining_table_baya_7100024.jpg",
+            "productName": "BÀN ĂN ANNE",
+            "price": 12900000,
+            "rating": 5,
+            "sold": 20,
+            "like": 5,
+            "comment": 20,
+            "code": "2000",
+            "shop": "Peak store"
+        },
+        {
+            "id": 9,
+            "img": "https://baya.vn/media/catalog/product/cache/d845c433d3e40faef420f5a1e6d21ea7/v/e/venice_dining_table_baya_5347_4.jpg",
+            "productName": "BÀN ĂN VENICE",
+            "price": 4792000,
+            "rating": 5,
+            "sold": 20,
+            "like": 5,
+            "comment": 20,
+            "code": "2000",
+            "shop": "Peak store"
+        }
+    ]
+}

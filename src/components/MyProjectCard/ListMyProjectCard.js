@@ -16,33 +16,47 @@ function ListMyProjectCard() {
         { i: '6', x: 6, y: 1, w: 4, h: 1 },
     ];
     return (
-        <ResponsiveGridLayout
-            className="container list__project-card"
-            layouts={{ lg: layouts }}
-            breakpoints={{ lg: 1180, md: 996, sm: 768, xs: 480, xxs: 0 }}
-            cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
-            rowHeight={300}
-            compactType="horizontal"
-        >
-            <div key="1">
-                <MyProjectCard></MyProjectCard>
+        <div className="container">
+            <div className="list__product-header">
+                <div className="list__product-header-left">Tất cả thiết kế</div>
+                <div className="list__product-header-right">
+                    <div className="list__product-header-right-text">Sắp xếp theo</div>
+                    <select className="select-wrapper">
+                        <option value="lime">Cũ nhất</option>
+                        <option selected value="coconut">
+                            Mới Nhất
+                        </option>
+                    </select>
+                </div>
             </div>
-            <div key="2">
-                <MyProjectCard></MyProjectCard>
-            </div>
-            <div key="3">
-                <MyProjectCard></MyProjectCard>
-            </div>
-            <div key="4">
-                <MyProjectCard></MyProjectCard>
-            </div>
-            <div key="5">
-                <MyProjectCard></MyProjectCard>
-            </div>
-            <div key="6">
-                <img style={{ width: '380px', height: '296px' }} src={images.m1} alt="My Project image"></img>
-            </div>
-        </ResponsiveGridLayout>
+            <ResponsiveGridLayout
+                className="container list__project-card"
+                layouts={{ lg: layouts }}
+                breakpoints={{ lg: 1180, md: 996, sm: 768, xs: 480, xxs: 0 }}
+                cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
+                rowHeight={300}
+                compactType="horizontal"
+            >
+                <div key="1">
+                    <MyProjectCard></MyProjectCard>
+                </div>
+                <div key="2">
+                    <MyProjectCard></MyProjectCard>
+                </div>
+                <div key="3">
+                    <MyProjectCard></MyProjectCard>
+                </div>
+                <div key="4">
+                    <MyProjectCard></MyProjectCard>
+                </div>
+                <div key="5">
+                    <MyProjectCard></MyProjectCard>
+                </div>
+                <div key="6">
+                    <img style={{ width: '380px', height: '296px' }} src={images.m1} alt="My Project image"></img>
+                </div>
+            </ResponsiveGridLayout>
+        </div>
     );
 }
 

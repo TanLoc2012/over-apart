@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/customer/HomePage/HomePage';
-import LoginPage from './pages/login/LoginPage';
+import LoginPage from './pages/authentication/LoginPage';
 import CartPage from './pages/customer/CartPage';
 import ShopPage from './pages/customer/ShopPage';
 import FurniturePage from './pages/customer/FurniturePage';
@@ -22,14 +22,13 @@ function App() {
         <Router>
             <Routes>
                 <Route path="/" exact element={<HomePage />}></Route>
-                <Route path="/login" element={<LoginPage />}></Route>
                 <Route path="/cart" element={<CartPage />}></Route>
                 <Route path="/shop" element={<ShopPage />}></Route>
                 <Route path="/furniture" element={<FurniturePage />}></Route>
                 <Route path="/sample-design" element={<SampleDesignPage />}></Route>
                 <Route path="/real-project" element={<RealProjectPage />}></Route>
                 <Route path="/my-project" element={<MyProjectPage />}></Route>
-                <Route path="/product" element={<InfoProductPage />}></Route>
+                <Route path="/product/:productId" element={<InfoProductPage />}></Route>
                 <Route path="/project" element={<InfoProjectPage />}></Route>
                 <Route path="/profile" element={<ProfilePage />}></Route>
                 <Route path="/address" element={<MyAddressPage />}></Route>
@@ -37,6 +36,7 @@ function App() {
                 <Route path="/my-wishlist" element={<FavoritesPage />}></Route>
                 <Route path="/apartment-detail" element={<ApartmentDetailPage />}></Route>
                 <Route path="/design2d" element={<Design2D />}></Route>
+                <Route path="/login" element={<LoginPage />}></Route>
             </Routes>
         </Router>
     );

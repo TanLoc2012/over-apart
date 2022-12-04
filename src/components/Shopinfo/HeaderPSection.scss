@@ -1,15 +1,15 @@
 .container__info {
-    margin-top: calc(var(--heigth-header)/2 ) !important;
-    .first_box{
+    margin-top: calc(var(--heigth-header) / 2) !important;
+    .first_box {
         background-color: white;
         margin-bottom: 20px !important;
         border-radius: 4px;
         display: flex;
         flex-direction: row;
-        .empty{
-            height:30px;
+        .empty {
+            height: 30px;
         }
-        .left_column{
+        .left_column {
             margin-left: 20px !important;
             width: 47%;
 
@@ -22,20 +22,20 @@
                 margin-left: auto;
                 margin-right: auto;
                 border-radius: 10px;
-                border: .5px solid #555;
+                border: 0.5px solid #555;
             }
-            .swiper{
+            .swiper {
                 width: 100%;
                 height: auto;
                 max-height: 200px;
                 margin-top: 22px;
-                .swiper-wrapper{
+                .swiper-wrapper {
                     .swiper-slide {
                         display: -webkit-box;
                         display: -ms-flexbox;
                         display: -webkit-flex;
                         display: flex;
-                        img{
+                        img {
                             height: 100%;
                             max-height: 100px;
                             width: auto;
@@ -43,9 +43,9 @@
                             margin-left: auto;
                             margin-right: auto;
                             border-radius: 10px;
-                            border: .5px solid #555;
+                            border: 0.5px solid #555;
                         }
-                        .select{
+                        .select {
                             border: 5px solid rgb(0, 0, 0);
                             margin-top: 0%;
                         }
@@ -53,47 +53,46 @@
                 }
             }
         }
-        .right_column{
+        .right_column {
             margin-left: 20px !important;
             width: 50%;
-            h1{
+            h1 {
                 margin-bottom: 5px;
             }
-            .code{
+            .code {
                 color: gray;
             }
-            .star_box{
+            .star_box {
                 display: flex;
                 position: relative;
                 cursor: pointer;
                 text-align: left;
-                .area{
+                .area {
                     position: relative;
                 }
-                .fill{
+                .fill {
                     width: 0%;
-                    overflow: hidden; 
+                    overflow: hidden;
                     position: absolute;
                 }
-                p{
-                    margin-left:5px;
+                p {
+                    margin-left: 5px;
                     color: #667479;
                     padding: 0px 10px;
-                    font-size:12px;
+                    font-size: 12px;
                 }
-                
             }
-            .money{
-                font-size:35px;
+            .money {
+                font-size: 35px;
                 font-weight: bold;
                 margin: 6px;
             }
-            .amount{
-                font-size:20px;
+            .amount {
+                font-size: 20px;
                 font-weight: bold;
                 margin: 6px;
             }
-            button{
+            button {
                 justify-content: center;
                 align-items: center;
                 padding: 10px;
@@ -106,42 +105,42 @@
             }
         }
     }
-    .second_box{
-        margin-top: calc(var(--heigth-header)/2 ) !important;
+    .second_box {
+        margin-top: calc(var(--heigth-header) / 2) !important;
         background-color: white;
         margin-bottom: 20px !important;
         border-radius: 4px;
         display: flex;
         flex-direction: row;
-        .left_column{
+        .left_column {
             margin-left: 20px !important;
             width: 27%;
             display: flex;
-            .shop_avatar{
-                max-width:90px;
-                height:auto;
-                img{
+            .shop_avatar {
+                max-width: 90px;
+                height: auto;
+                img {
                     width: 78px;
                     height: 78px;
                     border-radius: 50%;
                     margin-top: 52px;
                 }
             }
-            .text_box{
+            .text_box {
                 width: auto;
                 position: relative;
                 height: 100%;
                 margin-top: 52px;
                 margin-left: 34px;
-                margin-bottom:52px;
-                p{
+                margin-bottom: 52px;
+                p {
                     font-family: 'Roboto';
                     font-style: normal;
                     font-weight: 400;
                     font-size: 22px;
                     line-height: 24px;
                 }
-                button{
+                button {
                     justify-content: center;
                     align-items: center;
                     padding: 10px;
@@ -152,131 +151,129 @@
                     margin-top: 16px;
                     background: rgba(255, 207, 134, 0.73);
                     font-weight: bold;
-
                 }
             }
         }
-        .middle_column{
-            p{
+        .middle_column {
+            p {
                 font-size: 110px;
-                font-weight:100;
-                margin-top:10px;
+                font-weight: 100;
+                margin-top: 10px;
             }
         }
-        .right_column{
+        .right_column {
             margin-left: 104px !important;
             width: auto;
             display: flex;
-            p{
+            p {
                 font-family: 'Roboto';
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 22px;
-                    line-height: 24px;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 22px;
+                line-height: 24px;
             }
-            .left-left{
+            .left-left {
                 position: relative;
                 height: 100%;
                 margin-top: 60px;
                 margin-left: 34px;
-                margin-bottom:52px;
-
+                margin-bottom: 52px;
             }
-            .left-right{
+            .left-right {
                 position: relative;
                 height: 100%;
                 margin-top: 60px;
                 margin-left: 34px;
-                margin-bottom:52px;
-                p{
-                    color:red;
+                margin-bottom: 52px;
+                p {
+                    color: red;
                 }
             }
         }
     }
-    .third_box{
-        margin-top: calc(var(--heigth-header)/2 ) !important;
+    .third_box {
+        margin-top: calc(var(--heigth-header) / 2) !important;
         background-color: white;
         margin-bottom: 20px !important;
         border-radius: 4px;
-        .empty{
+        .empty {
             height: 40px;
         }
-        .title{
+        .title {
             padding: 20px 0px 20px 20px;
             width: 90%;
             height: 68px;
             margin-left: 50px;
-            background: #F5F5F5;
+            background: #f5f5f5;
             font-size: 24px;
-            font-weight:600;
+            font-weight: 600;
         }
-        .empti{
+        .empti {
             height: 20px;
         }
-        .info{
+        .info {
             margin-left: 50px !important;
             width: auto;
             display: flex;
 
-            p{
+            p {
                 font-family: 'Roboto';
                 font-style: normal;
-                font-weight:500;
+                font-weight: 500;
                 font-size: 20px;
                 line-height: 24px;
             }
-            .left{
-                p{
-                position: relative;
-                margin-left:20px;
-                margin-bottom:20px;
+            .left {
+                p {
+                    position: relative;
+                    margin-left: 20px;
+                    margin-bottom: 20px;
                 }
             }
-            .right{
-                margin-left:100px;
-                p{
-                position: relative;
-                margin-left:20px;
-                margin-bottom:20px;
+            .right {
+                margin-left: 100px;
+                p {
+                    position: relative;
+                    margin-left: 20px;
+                    margin-bottom: 20px;
                 }
             }
         }
-        .descript{
+        .descript {
             margin-left: 50px !important;
-            p{
+            p {
                 position: relative;
                 font-family: 'Roboto';
                 font-style: normal;
-                font-weight:500;
+                font-weight: 500;
                 font-size: 20px;
                 line-height: 24px;
-                margin-left:20px;
-                margin-bottom:20px;
+                margin-left: 20px;
+                margin-bottom: 20px;
             }
         }
     }
-    .fourth_box{
-        margin-top: calc(var(--heigth-header)/2 ) !important;
+    .fourth_box {
+        margin-top: calc(var(--heigth-header) / 2) !important;
         background-color: white;
         margin-bottom: 20px !important;
         border-radius: 4px;
-        .empty{
+        .empty {
             height: 40px;
         }
-        .title{
+        .title {
             height: 68px;
             margin-left: 70px;
             font-size: 24px;
-            font-weight:600;
+            font-weight: 600;
         }
-        .filter-comment{
+        .filter-comment {
             width: auto;
             display: flex;
-            
-            .left{
+
+            .left {
                 margin-left: 100px;
-                p{
+                p {
                     width: auto;
                     font-family: 'Roboto';
                     font-style: normal;
@@ -286,22 +283,22 @@
                     display: flex;
                     align-items: center;
 
-                    color: #FF0000;
+                    color: #ff0000;
                     margin-bottom: 8px;
                 }
-                a{
+                a {
                     width: auto;
                     margin-bottom: 8px;
                     margin-right: 5px;
                     font-size: 32px;
-                    color: #FF0000;
+                    color: #ff0000;
                     font-weight: bold;
                 }
             }
-            .empti{
+            .empti {
                 width: 40%;
             }
-            button{
+            button {
                 padding: 0px;
 
                 width: 116px;
@@ -317,39 +314,39 @@
                 margin-left: 12px;
             }
         }
-        .comment-section{
+        .comment-section {
             margin-top: 17px;
-            .comment{
+            .comment {
                 margin: 5px;
                 width: auto;
                 display: flex;
-                img{
+                img {
                     width: 40px;
                     height: 40px;
                     border-radius: 50%;
                     margin-top: 10px;
                     margin-left: 70px;
                 }
-                .text{
+                .text {
                     margin-left: 16px;
-                    .first{
+                    .first {
                         display: flex;
-                        .name{
-                            font-weight:600;
+                        .name {
+                            font-weight: 600;
                             width: auto;
                         }
-                        .report{
-                            margin-left:16px;
-                            font-weight:100;
+                        .report {
+                            margin-left: 16px;
+                            font-weight: 100;
                         }
                     }
-                    .date{
+                    .date {
                         font-weight: 100;
                     }
-                    .content{
+                    .content {
                         margin: 16px 0;
                     }
-                    img{
+                    img {
                         height: 100%;
                         max-height: 100px;
                         width: auto;

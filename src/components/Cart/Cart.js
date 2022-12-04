@@ -1,58 +1,23 @@
 import './Cart.scss';
 import ListShopCart from './ListShopCart/ListShopCart';
 import images from '../../assets/images';
+import { useDispatch, useSelector } from 'react-redux';
 
 function Cart() {
+    const cart = useSelector((state) => state.cart);
+
+    let totalMoney = 0;
+    cart.map((item) => {
+        totalMoney += item.isChecked ? item.product.price * item.quantity : 0;
+    });
+
+    const shopI = cart.filter((item) => item.product.shop === '1994 store');
+    console.log(shopI);
+
     const shopItems = [
         {
             shopName: "1994's store",
-            items: [
-                {
-                    img: images.f1,
-                    itemName: 'Bo ban ghe 1',
-                    price: 50000,
-                    quantity: 1,
-                    totalPrice: 50000,
-                },
-                {
-                    img: images.f1,
-                    itemName: 'Bo ban ghe 2',
-                    price: 50000,
-                    quantity: 1,
-                    totalPrice: 50000,
-                },
-            ],
-        },
-        {
-            shopName: "1994's store 1",
-            items: [
-                {
-                    img: images.f1,
-                    itemName: 'Bo ban ghe 1',
-                    price: 50000,
-                    quantity: 1,
-                    totalPrice: 50000,
-                },
-            ],
-        },
-        {
-            shopName: "1994's store",
-            items: [
-                {
-                    img: images.f1,
-                    itemName: 'Bo ban ghe 1',
-                    price: 50000,
-                    quantity: 1,
-                    totalPrice: 50000,
-                },
-                {
-                    img: images.f1,
-                    itemName: 'Bo ban ghe 2',
-                    price: 50000,
-                    quantity: 1,
-                    totalPrice: 50000,
-                },
-            ],
+            items: cart,
         },
     ];
 
@@ -91,11 +56,15 @@ function Cart() {
                 <div className="cart__right-price">
                     <div className="price__item">
                         <span className="">Tạm tính</span>
-                        <span className="price__item-value">50.000 đ</span>
+                        <span className="price__item-value">
+                            {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(totalMoney)}{' '}
+                        </span>
                     </div>
                     <div className="price__total">
                         <span className="">Tổng tiền</span>
-                        <span className="price__total-value">50.000 đ</span>
+                        <span className="price__total-value">
+                            {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(totalMoney)}{' '}
+                        </span>
                     </div>
                 </div>
                 <button className="cart__right-btn">Mua hàng (1)</button>

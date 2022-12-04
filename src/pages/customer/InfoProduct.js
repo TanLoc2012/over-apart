@@ -3,6 +3,9 @@ import Footer from '../../components/Footer/Footer';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import HeaderPSection from '../../components/Shopinfo/HeaderPSection';
 import images from '../../assets/images';
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function InfoProductPage() {
     const child = [
@@ -17,14 +20,20 @@ function InfoProductPage() {
         {
             path: '',
             content: 'Bộ bàn ghế ngoài trời BARCELONA',
-        }
+        },
     ];
+
+    const params = useParams();
+    const [productInfo, setProductInfo] = useState({});
+    useEffect(() => {
+        axios.get(`http://localhost:5000/products/${params.productId}`).then((reponse) => setProductInfo(reponse.data));
+    }, []);
 
     return (
         <div>
             <Header></Header>
             <Breadcrumb child={child}></Breadcrumb>
-            <HeaderPSection product={{ img: images.f1,productName: 'Bộ bàn ghế Barcelona 1',rating: 5,sold: 20,like:5,comment:5,price: '6.900.000 đ',code:'MÃ SẢN PHẨM 2001353'}}></HeaderPSection>
+            {productInfo ? <HeaderPSection product={productInfo}></HeaderPSection> : <p>Loading</p>}
             <Footer></Footer>
         </div>
     );

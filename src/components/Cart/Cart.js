@@ -1,40 +1,39 @@
 import './Cart.scss';
 import ListShopCart from './ListShopCart/ListShopCart';
-import images from '../../assets/images';
 import { useDispatch, useSelector } from 'react-redux';
+import { selectAll, selectAllOfShop } from '../../reducers/cartSlice';
+import { useState } from 'react';
 
 function Cart() {
+    const dispath = useDispatch();
     const cart = useSelector((state) => state.cart);
 
+    let isCheckedStatusInput = cart.length === 0 ? false : true;
     let totalMoney = 0;
-    cart.map((item) => {
-        totalMoney += item.isChecked ? item.product.price * item.quantity : 0;
+    cart.map((shop) => {
+        if (shop.isChecked === false) isCheckedStatusInput = false;
+        totalMoney = shop.products.reduce((a, b) => (b.isChecked ? a + b.product.price * b.quantity : a), totalMoney);
     });
-
-    const shopI = cart.filter((item) => item.product.shop === '1994 store');
-    console.log(shopI);
-
-    const shopItems = [
-        {
-            shopName: "1994's store",
-            items: cart,
-        },
-    ];
 
     return (
         <div className="container container__cart">
             <div className="cart__left">
                 <div className="cart__left-title">
-                    <input type="checkbox" className="shop__cart-input"></input>
-                    <span className="cart__name">Tất cả (2 sản phẩm)</span>
+                    <input
+                        type="checkbox"
+                        className="shop__cart-input"
+                        checked={isCheckedStatusInput}
+                        onClick={() => dispath(selectAll(!isCheckedStatusInput))}
+                    ></input>
+                    <span className="cart__name">Tất cả</span>
                     <span className="cart__price">Đơn giá</span>
                     <span className="cart__quantity">Số lượng</span>
                     <span className="cart__total-price">Số tiền</span>
                     <span className="cart__action">Thao tác</span>
                 </div>
                 <div className="cart__left-shop">
-                    {shopItems.map((shopItem) => (
-                        <ListShopCart shopItem={shopItem}></ListShopCart>
+                    {cart.map((shop) => (
+                        <ListShopCart shop={shop}></ListShopCart>
                     ))}
                 </div>
             </div>
@@ -67,7 +66,7 @@ function Cart() {
                         </span>
                     </div>
                 </div>
-                <button className="cart__right-btn">Mua hàng (1)</button>
+                <button className="cart__right-btn">Mua hàng</button>
             </div>
         </div>
     );

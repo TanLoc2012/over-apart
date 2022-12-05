@@ -1,36 +1,26 @@
 import '../Cart.scss';
 import ShopItem from './ShopItem';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectItem } from '../../../reducers/cartSlice';
-import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { selectAllOfShop } from '../../../reducers/cartSlice';
 
-function ListShopCart({ shopItem }) {
+function ListShopCart({ shop }) {
     const dispath = useDispatch();
-    const cart = useSelector((state) => state.cart);
-    const [isCheckedShop, setIsCheckedShop] = useState(false);
 
-    const handleClickShop = () => {
-        cart.map((item) => {
-            const product = item;
-            dispath(selectItem(product));
-        });
-        setIsCheckedShop(!isCheckedShop);
-    };
     return (
         <div className="shop__cart">
             <div className="shop__cart-title">
                 <input
                     type="checkbox"
                     className="shop__cart-input"
-                    checked={isCheckedShop}
-                    onClick={handleClickShop}
+                    checked={shop.isChecked}
+                    onClick={() => dispath(selectAllOfShop(shop))}
                 ></input>
                 <Link to="">
-                    <span className="shop__cart-name">{shopItem.shopName}</span>
+                    <span className="shop__cart-name">{shop.shopName}</span>
                 </Link>
             </div>
-            {shopItem.items.map((item) => (
+            {shop.products.map((item) => (
                 <ShopItem item={item}></ShopItem>
             ))}
         </div>

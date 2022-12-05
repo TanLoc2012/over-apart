@@ -2,9 +2,19 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import HeaderSSection from '../../components/ProjectInfo/HeaderSSection';
-import images from '../../assets/images';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 function InfoProjectPage() {
+    const params = useParams();
+    const [projectInfo, setProjectInfo] = useState({});
+    useEffect(() => {
+        axios
+            .get(`http://localhost:5000/sample-design/${params.projectId}`)
+            .then((reponse) => setProjectInfo(reponse.data));
+    }, []);
+
     const child = [
         {
             path: '/',
@@ -17,14 +27,14 @@ function InfoProjectPage() {
         {
             path: '',
             content: 'Photo - Wayfair modern white kitchen - derbala villa',
-        }
+        },
     ];
 
     return (
         <div>
             <Header></Header>
             <Breadcrumb child={child}></Breadcrumb>
-            <HeaderSSection product={{ img: images.f1,productName: 'Bộ bàn ghế Barcelona 1',rating: 5,sold: 20,like:5,comment:5,price: '6.900.000 đ',code:'MÃ SẢN PHẨM 2001353'}}></HeaderSSection>
+            {projectInfo ? <HeaderSSection product={projectInfo}></HeaderSSection> : <p>Loading</p>}
             <Footer></Footer>
         </div>
     );

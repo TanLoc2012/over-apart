@@ -29,7 +29,7 @@ function App() {
                 <Route path="/real-project" element={<RealProjectPage />}></Route>
                 <Route path="/my-project" element={<MyProjectPage />}></Route>
                 <Route path="/product/:productId" element={<InfoProductPage />}></Route>
-                <Route path="/project" element={<InfoProjectPage />}></Route>
+                <Route path="/project/:projectId" element={<InfoProjectPage />}></Route>
                 <Route path="/profile" element={<ProfilePage />}></Route>
                 <Route path="/address" element={<MyAddressPage />}></Route>
                 <Route path="/my-purchase" element={<MyPurchasePage />}></Route>

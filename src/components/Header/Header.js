@@ -18,6 +18,10 @@ function Header() {
     };
 
     const cart = useSelector((state) => state.cart);
+    let listProductInCart = [];
+    cart.map((shop) => {
+        shop.products.map((product) => listProductInCart.push(product));
+    });
 
     return (
         <div className="container__header">
@@ -60,13 +64,13 @@ function Header() {
                             <Link to="/cart">
                                 <FontAwesomeIcon icon={faCartShopping} className="header__nav__cart" />
                             </Link>
-                            <div className="header__nav__cart__number">{cart.length}</div>
+                            <div className="header__nav__cart__number">{listProductInCart.length}</div>
                         </div>
                         <div className="header__nav-cart-list">
                             <div className="header__nav-cart-list-header">Sản phẩm mới thêm</div>
                             <div className="header__nav-cart-list-body">
-                                {cart?.map((item) => (
-                                    <ListCartItem key={item.product.id} product={item.product} />
+                                {listProductInCart?.map((item) => (
+                                    <ListCartItem product={item.product} />
                                 ))}
                             </div>
                             <div className="header__nav-cart-list-footer">

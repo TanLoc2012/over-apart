@@ -7,6 +7,8 @@ import HeaderText from '../../../components/HeaderText/HeaderText';
 import ImageSlider from '../../../components/ImageSlider/ImageSlider';
 import images from '../../../assets/images';
 import ApartmentCard from '../../../components/ApartmentCard/ApartmentCard';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 function RealProjectPage() {
     const breadcrumb = [
@@ -19,84 +21,39 @@ function RealProjectPage() {
             content: 'Dự án thực tế',
         },
     ];
-    const aparatmentFeautured = {
-        headerText: 'Chung cư nổi bật',
-        pathHeaderText: '',
-        component: <ApartmentCard></ApartmentCard>,
-        productInfos: [
-            {
-                img: images.a1,
-                productName: 'Chung cư Vinhome Quận 9',
-                description1: 'Chủ đầu tư: Vinhome',
-                description2: 'Địa chỉ: Quận 9, TP Hồ Chí Minh',
-            },
-            {
-                img: images.a1,
-                productName: 'Chung cư Vinhome Quận 9',
-                description1: 'Chủ đầu tư: Vinhome',
-                description2: 'Địa chỉ: Quận 9, TP Hồ Chí Minh',
-            },
-            {
-                img: images.a1,
-                productName: 'Chung cư Vinhome Quận 9',
-                description1: 'Chủ đầu tư: Vinhome',
-                description2: 'Địa chỉ: Quận 9, TP Hồ Chí Minh',
-            },
-            {
-                img: images.a1,
-                productName: 'Chung cư Vinhome Quận 9',
-                description1: 'Chủ đầu tư: Vinhome',
-                description2: 'Địa chỉ: Quận 9, TP Hồ Chí Minh',
-            },
-            {
-                img: images.a1,
-                productName: 'Chung cư Vinhome Quận 9',
-                description1: 'Chủ đầu tư: Vinhome',
-                description2: 'Địa chỉ: Quận 9, TP Hồ Chí Minh',
-            },
-            {
-                img: images.a1,
-                productName: 'Chung cư Vinhome Quận 9',
-                description1: 'Chủ đầu tư: Vinhome',
-                description2: 'Địa chỉ: Quận 9, TP Hồ Chí Minh',
-            },
-            {
-                img: images.a1,
-                productName: 'Chung cư Vinhome Quận 9',
-                description1: 'Chủ đầu tư: Vinhome',
-                description2: 'Địa chỉ: Quận 9, TP Hồ Chí Minh',
-            },
-            {
-                img: images.a1,
-                productName: 'Chung cư Vinhome Quận 9',
-                description1: 'Chủ đầu tư: Vinhome',
-                description2: 'Địa chỉ: Quận 9, TP Hồ Chí Minh',
-            },
-            {
-                img: images.a1,
-                productName: 'Chung cư Vinhome Quận 9',
-                description1: 'Chủ đầu tư: Vinhome',
-                description2: 'Địa chỉ: Quận 9, TP Hồ Chí Minh',
-            },
-        ],
-    };
-    const listCard = {
-        component: <ApartmentCard></ApartmentCard>,
-        itemInfos: [
-            {
-                img: images.f1,
-                productName: 'Chung cư Vinhome Quận 9',
-                description1: 'Chủ đầu tư: Vinhome',
-                description2: 'Địa chỉ: Quận 9, TP Hồ Chí Minh',
-            },
-        ],
-    };
+
+    const [aparatmentFeautured, setAparatmentFeautured] = useState();
+    const [listCard, setListCard] = useState();
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/real-project').then((reponse) =>
+            setAparatmentFeautured({
+                headerText: 'Chung cư nổi bật',
+                pathHeaderText: '',
+                component: <ApartmentCard></ApartmentCard>,
+                productInfos: reponse.data,
+            }),
+        );
+    }, []);
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/real-project').then((reponse) => {
+            let result = [];
+            reponse.data.map((product) => {
+                result.push(<ApartmentCard product={product}></ApartmentCard>);
+            });
+            setListCard({
+                component: result,
+            });
+        });
+    }, []);
+
     return (
         <div>
             <Header></Header>
             <Breadcrumb child={breadcrumb}></Breadcrumb>
             <HeaderText></HeaderText>
-            <ImageSlider child={aparatmentFeautured}></ImageSlider>
+            {aparatmentFeautured ? <ImageSlider child={aparatmentFeautured}></ImageSlider> : <p>Loading</p>}
             <div className="container">
                 <div className="real__project">
                     <form>
@@ -147,7 +104,7 @@ function RealProjectPage() {
                         </select>
                     </form>
                 </div>
-                <AllProduct headerTitle={'Chung cư'} listCard={listCard}></AllProduct>
+                {listCard ? <AllProduct headerTitle={'Chung cư'} listCard={listCard}></AllProduct> : <p>Loading</p>}
             </div>
             <Footer></Footer>
         </div>

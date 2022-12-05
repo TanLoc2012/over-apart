@@ -7,7 +7,9 @@ function ListCartItem({ product }) {
                 <img src={product.img} alt="Product image"></img>
                 <div>{product.productName}</div>
             </div>
-            <div style={{ color: 'red' }}>{product.price.toLocaleString('it-IT')} đ</div>
+            <div style={{ color: 'red' }}>
+                {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(product.price)}{' '}
+            </div>
         </div>
     );
 }

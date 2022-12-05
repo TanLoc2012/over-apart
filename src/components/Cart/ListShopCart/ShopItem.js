@@ -3,11 +3,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { decrementQuantity, selectItem } from '../../../reducers/cartSlice';
+import {
+    decrementQuantity,
+    selectItem,
+    addToCart,
+    incrementQuantity,
+    removeProductInCart,
+} from '../../../reducers/cartSlice';
 
 function ShopItem({ item }) {
     const dispath = useDispatch();
     const product = item;
+
     return (
         <div className="shop__item">
             <input
@@ -32,10 +39,14 @@ function ShopItem({ item }) {
                     <FontAwesomeIcon
                         icon={faMinus}
                         className="quantity__icon"
-                        onClick={() => dispath(decrementQuantity({ item }))}
+                        onClick={() => dispath(decrementQuantity(item))}
                     />
                     <input type="text" className="quantity__number" value={item.quantity}></input>
-                    <FontAwesomeIcon icon={faPlus} className="quantity__icon" />
+                    <FontAwesomeIcon
+                        icon={faPlus}
+                        className="quantity__icon"
+                        onClick={() => dispath(incrementQuantity(item))}
+                    />
                 </div>
             </div>
             <span className="cart__total-price shop__item-total-price">
@@ -43,7 +54,9 @@ function ShopItem({ item }) {
                     item.quantity * item.product.price,
                 )}
             </span>
-            <span className="cart__action-item">Xóa</span>
+            <span className="cart__action-item" onClick={() => dispath(removeProductInCart(product))}>
+                Xóa
+            </span>
         </div>
     );
 }

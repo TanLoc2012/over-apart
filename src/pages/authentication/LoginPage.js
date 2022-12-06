@@ -29,8 +29,14 @@ function LoginPage() {
                     </div>
                 </div>
                 <form>
-                    <input className="input-wrapper" type="email" name="email" placeholder="Email" />
-                    <input className="input-wrapper" type="password" name="password" placeholder="Password" />
+                <div class="did-floating-label-content">
+                    <input className="input-wrapper" type="email" name="email" placeholder=" " />
+                    <label>Email</label>
+                </div>
+                <div class="did-floating-label-content">
+                    <input className="input-wrapper" type="password" name="password" placeholder=" " />
+                    <label>Password</label>
+                </div>
                     <Link className="forgot__pwd color-link" to="">
                         Quên mật khẩu?
                     </Link>

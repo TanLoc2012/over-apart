@@ -40,7 +40,10 @@
         text-align: right;
     }
 }
-
+.did-floating-label-content { 
+    position:relative; 
+    margin-bottom:20px; 
+  }
 .input-wrapper {
     width: 100%;
     padding: 23px 40px 9px 10px;
@@ -54,8 +57,35 @@
     touch-action: manipulation;
     -moz-appearance: none;
     -webkit-appearance: none;
+    &:focus{
+        outline:none;
+        ~ label{
+          top:-8px;
+          font-size:13px;
+        }
+      }
 }
 
+label {
+    font-size: 40px;
+    color:#b3b2b2; 
+    font-size:13px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:12px;
+    top: 20px;
+    border: 0;
+    background:#fff;
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+    
+  }
+  .input-wrapper:not(:placeholder-shown) ~ label {
+    top:-8px;
+    font-size:13px;
+  }
 .color-link {
     color: #1591dd;
 }

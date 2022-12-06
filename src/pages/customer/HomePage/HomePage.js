@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import Footer from '../../../components/Footer/Footer';
 import Header from '../../../components/Header/Header';
 import images from '../../../assets/images';
@@ -6,6 +6,8 @@ import ProductCard from '../../../components/ProductCard/ProductCard';
 import './HomePage.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlay } from '@fortawesome/free-regular-svg-icons';
+import { faAnglesRight } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 function HomePage() {
     const product = {
@@ -13,8 +15,11 @@ function HomePage() {
         productName: 'Phòng khách Châu Âu',
         isVIP: 'VIP',
         rating: 5,
-        price: '6.900.000 đ',
+        price: 6900000,
     };
+
+    const [categoryActive, setCategoryActive] = useState('Ghế');
+    const listCategory = ['Tủ', 'Bàn', 'Giường', 'Ghế', 'Đèn', 'Tranh'];
 
     return (
         <Fragment>
@@ -58,6 +63,7 @@ function HomePage() {
                                         <div>Ghế Quý’s Tộc’s</div>
                                         <div className="product__item-info-rating">★★★★★</div>
                                         <div className="product__item-info-price">2.650.000 đ</div>
+                                        {/* {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(totalMoney)}{' '} */}
                                     </div>
                                 </div>
                                 <div
@@ -76,14 +82,31 @@ function HomePage() {
                             </div>
                             <div className="category__text-wrapper">
                                 <div className="category__text">
-                                    <div className="category__text-item">Tủ</div>
-                                    <div className="category__text-item">Bàn</div>
-                                    <div className="category__text-item">Giường</div>
-                                    <div className="category__text-item category__text-item-active">Ghế</div>
-                                    <div className="category__text-item">Giường</div>
-                                    <div className="category__text-item">Gương</div>
-                                    <div className="category__text-item">Đèn</div>
-                                    <div className="category__text-item">Tranh</div>
+                                    {listCategory.map((category) => (
+                                        <div className="category__link-wrapper">
+                                            <div
+                                                key={category}
+                                                className={
+                                                    categoryActive === category
+                                                        ? 'category__text-item category__text-item-active'
+                                                        : 'category__text-item'
+                                                }
+                                                onClick={() => setCategoryActive(category)}
+                                            >
+                                                {category}
+                                            </div>
+                                            {categoryActive === category ? (
+                                                <Link to="/furniture" className="category__link">
+                                                    <FontAwesomeIcon
+                                                        className="category__link-icon"
+                                                        icon={faAnglesRight}
+                                                    />
+                                                </Link>
+                                            ) : (
+                                                ''
+                                            )}
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
 
@@ -118,9 +141,15 @@ function HomePage() {
                 <div className="home__footer-wrapper">
                     <div className="container home__footer">
                         <div className="home__footer-header">
-                            <div className="">Dự án thực tế</div>
-                            <div className="home__footer-header-active">Thiết kế mẫu</div>
-                            <div className="">Dự đoán xu hướng</div>
+                            <div style={{ cursor: 'pointer' }} className="">
+                                Dự án thực tế
+                            </div>
+                            <div style={{ cursor: 'pointer' }} className="home__footer-header-active">
+                                Thiết kế mẫu
+                            </div>
+                            <div style={{ cursor: 'pointer' }} className="">
+                                Dự đoán xu hướng
+                            </div>
                         </div>
                         <div className="home__footer-body">
                             <div className="footer__body-img">

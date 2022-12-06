@@ -1,12 +1,11 @@
 import './Cart.scss';
 import ListShopCart from './ListShopCart/ListShopCart';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectAll, selectAllOfShop } from '../../reducers/cartSlice';
-import { useState } from 'react';
+import { selectAll } from '../../reducers/cartSlice';
 
 function Cart() {
     const dispath = useDispatch();
-    const cart = useSelector((state) => state.cart);
+    const cart = useSelector((state) => state.cart.cart);
 
     let isCheckedStatusInput = cart.length === 0 ? false : true;
     let totalMoney = 0;
@@ -33,7 +32,7 @@ function Cart() {
                 </div>
                 <div className="cart__left-shop">
                     {cart.map((shop) => (
-                        <ListShopCart shop={shop}></ListShopCart>
+                        <ListShopCart key={shop.shopName} shop={shop}></ListShopCart>
                     ))}
                 </div>
             </div>

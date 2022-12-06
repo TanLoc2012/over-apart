@@ -2,160 +2,44 @@ import './HeaderPSection.scss';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Link } from 'react-router-dom';
+import axios from 'axios';
 import images from '../../assets/images';
 import Star from '../Star/star';
 import Pagination from '../Pagination/Pagination';
 import ImageSlider from '../../components/ImageSlider/ImageSlider';
-import { useDispatch } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { addToCart } from '../../reducers/cartSlice';
+import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
 
 function ShopInfo({ product }) {
     const dispath = useDispatch();
+    const [otherProduct, setOtherProduct] = useState();
+    const [relatedProduct, setRelatedProduct] = useState();
+    const [quantityProduct, setQuantityProduct] = useState(1);
 
-    var number = 1;
-    const otherProduct = {
-        headerText: 'Các sản phẩm khác của shop',
-        pathHeaderText: '',
-        productInfos: [
-            {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona 1',
-                rating: 5,
-                sold: 20,
-                price: '6.900.000 đ',
-            },
-            {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona 2',
-                rating: 5,
-                sold: 20,
-                price: '6.900.000 đ',
-            },
-            {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona 3',
-                rating: 5,
-                sold: 20,
-                price: '6.900.000 đ',
-            },
-            {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona',
-                rating: 5,
-                sold: 20,
-                price: '6.900.000 đ',
-            },
-            {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona',
-                rating: 5,
-                sold: 20,
-                price: '6.900.000 đ',
-            },
-            {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona',
-                rating: 5,
-                sold: 20,
-                price: '6.900.000 đ',
-            },
-            {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona',
-                rating: 5,
-                sold: 20,
-                price: '6.900.000 đ',
-            },
-            {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona 10',
-                rating: 5,
-                sold: 20,
-                price: '6.900.000 đ',
-            },
-            {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona 11',
-                rating: 5,
-                sold: 20,
-                price: '6.900.000 đ',
-            },
-        ],
-    };
+    useEffect(() => {
+        axios.get('http://localhost:5000/products').then((reponse) =>
+            setOtherProduct({
+                headerText: 'Các sản phẩm khác của shop',
+                pathHeaderText: '',
+                productInfos: reponse.data,
+            }),
+        );
+    }, []);
 
-    const relatedProduct = {
-        headerText: 'Các sản phẩm liên quan',
-        pathHeaderText: '',
-        productInfos: [
-            {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona 1',
-                rating: 5,
-                sold: 20,
-                price: '6.900.000 đ',
-            },
-            {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona 2',
-                rating: 5,
-                sold: 20,
-                price: '6.900.000 đ',
-            },
-            {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona 3',
-                rating: 5,
-                sold: 20,
-                price: '6.900.000 đ',
-            },
-            {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona',
-                rating: 5,
-                sold: 20,
-                price: '6.900.000 đ',
-            },
-            {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona',
-                rating: 5,
-                sold: 20,
-                price: '6.900.000 đ',
-            },
-            {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona',
-                rating: 5,
-                sold: 20,
-                price: '6.900.000 đ',
-            },
-            {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona',
-                rating: 5,
-                sold: 20,
-                price: '6.900.000 đ',
-            },
-            {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona 10',
-                rating: 5,
-                sold: 20,
-                price: '6.900.000 đ',
-            },
-            {
-                img: images.f1,
-                productName: 'Bộ bàn ghế Barcelona 11',
-                rating: 5,
-                sold: 20,
-                price: '6.900.000 đ',
-            },
-        ],
-    };
+    useEffect(() => {
+        axios.get('http://localhost:5000/products').then((reponse) =>
+            setRelatedProduct({
+                headerText: 'Các sản phẩm liên quan',
+                pathHeaderText: '',
+                productInfos: reponse.data,
+            }),
+        );
+    }, []);
 
     return (
         <div className="container container__info">
@@ -187,8 +71,8 @@ function ShopInfo({ product }) {
                     <div className="empty"></div>
                 </div>
                 <div className="right_column">
-                    <h1> {product.productName}</h1>
-                    <p className="code">Mã code: {product.code}</p>
+                    <h1>{product.productName}</h1>
+                    <p className="code">Mã sản phẩm: {product.code}</p>
                     <div>
                         <div className="star_box">
                             <Star number={3.5} />
@@ -204,12 +88,30 @@ function ShopInfo({ product }) {
                                 product.price,
                             )}
                         </p>
-                        <p className="amount">
-                            Số lượng <FontAwesomeIcon icon={faMinus} /> {number} <FontAwesomeIcon icon={faPlus} />
-                        </p>
+                        <div style={{ marginBottom: '12px' }} className="shop__item-quantity-wrapper">
+                            <span style={{ fontSize: '1.8rem', marginRight: '12px', fontWeight: '600' }}>Số lượng</span>
+                            <div className="shop__item-quantity">
+                                <FontAwesomeIcon
+                                    icon={faMinus}
+                                    className="quantity__icon"
+                                    onClick={() => setQuantityProduct(quantityProduct - 1)}
+                                />
+                                <input
+                                    type="text"
+                                    className="quantity__number"
+                                    value={quantityProduct}
+                                    onChange={(e) => setQuantityProduct(e.target.value)}
+                                ></input>
+                                <FontAwesomeIcon
+                                    icon={faPlus}
+                                    className="quantity__icon"
+                                    onClick={() => setQuantityProduct(quantityProduct + 1)}
+                                />
+                            </div>
+                        </div>
                         <button
                             style={{ backgroundColor: '#FFCF86', cursor: 'pointer' }}
-                            onClick={() => dispath(addToCart({ product }))}
+                            onClick={() => dispath(addToCart({ product, quantityProduct }))}
                         >
                             Thêm vào giỏ
                         </button>
@@ -231,10 +133,10 @@ function ShopInfo({ product }) {
                     </div>
                 </div>
                 <div className="middle_column">
-                    <p>|</p>
+                    <p></p>
                 </div>
                 <div className="right_column">
-                    <div className="left-left">
+                    <div style={{ marginLeft: 40 }} className="left-left">
                         <p>Đánh giá</p>
                         <p style={{ marginTop: '16px' }}>Sản phẩm</p>
                     </div>
@@ -336,8 +238,8 @@ function ShopInfo({ product }) {
                     <Pagination></Pagination>
                 </div>
             </div>
-            <ImageSlider child={otherProduct}></ImageSlider>
-            <ImageSlider child={relatedProduct}></ImageSlider>
+            {otherProduct ? <ImageSlider child={otherProduct}></ImageSlider> : <p>Loading</p>}
+            {relatedProduct ? <ImageSlider child={relatedProduct}></ImageSlider> : <p>Loading</p>}
         </div>
     );
 }

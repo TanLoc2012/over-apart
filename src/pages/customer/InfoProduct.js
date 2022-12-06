@@ -1,11 +1,10 @@
+import axios from 'axios';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import HeaderPSection from '../../components/Shopinfo/HeaderPSection';
-import images from '../../assets/images';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 
 function InfoProductPage() {
     const child = [

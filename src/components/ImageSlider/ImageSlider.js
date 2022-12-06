@@ -24,7 +24,7 @@ function ImageSlider({ child }) {
         : child?.productInfos.map((product) => {
               silder.push(
                   <SwiperSlide className="swiper-slide">
-                      <ProductCard product={product}></ProductCard>
+                      <ProductCard type={child.type} product={product}></ProductCard>
                   </SwiperSlide>,
               );
           });

@@ -21,7 +21,7 @@ function ListShopCart({ shop }) {
                 </Link>
             </div>
             {shop.products.map((item) => (
-                <ShopItem item={item}></ShopItem>
+                <ShopItem key={item.product.id} item={item}></ShopItem>
             ))}
         </div>
     );

@@ -4,14 +4,20 @@ import Breadcrumb from '../../../components/Breadcrumb/Breadcrumb';
 import Footer from '../../../components/Footer/Footer';
 import Header from '../../../components/Header/Header';
 import Pagination from '../../../components/Pagination/Pagination';
-import { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import ProductCard from '../../../components/ProductCard/ProductCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 function FavoritesPage() {
+    const [listCart, setListCart] = useState();
+    useEffect(() => {
+        axios.get('http://localhost:5000/products').then((reponse) => setListCart(reponse.data));
+    }, []);
+
     const breadcrumb = [
         {
             path: '/',
@@ -58,24 +64,48 @@ function FavoritesPage() {
                         rowHeight={300}
                         compactType="horizontal"
                     >
-                        <div key="1">
-                            <ProductCard></ProductCard>
-                        </div>
-                        <div key="2">
-                            <ProductCard></ProductCard>
-                        </div>
-                        <div key="3">
-                            <ProductCard></ProductCard>
-                        </div>
-                        <div key="4">
-                            <ProductCard></ProductCard>
-                        </div>
-                        <div key="5">
-                            <ProductCard></ProductCard>
-                        </div>
-                        <div key="6">
-                            <ProductCard></ProductCard>
-                        </div>
+                        {listCart ? (
+                            <div key="1">
+                                <ProductCard product={listCart[0]}></ProductCard>
+                            </div>
+                        ) : (
+                            <p>Loading</p>
+                        )}
+                        {listCart ? (
+                            <div key="2">
+                                <ProductCard product={listCart[1]}></ProductCard>
+                            </div>
+                        ) : (
+                            <p>Loading</p>
+                        )}
+                        {listCart ? (
+                            <div key="3">
+                                <ProductCard product={listCart[2]}></ProductCard>
+                            </div>
+                        ) : (
+                            <p>Loading</p>
+                        )}
+                        {listCart ? (
+                            <div key="4">
+                                <ProductCard product={listCart[3]}></ProductCard>
+                            </div>
+                        ) : (
+                            <p>Loading</p>
+                        )}
+                        {listCart ? (
+                            <div key="5">
+                                <ProductCard product={listCart[4]}></ProductCard>
+                            </div>
+                        ) : (
+                            <p>Loading</p>
+                        )}
+                        {listCart ? (
+                            <div key="6">
+                                <ProductCard product={listCart[5]}></ProductCard>
+                            </div>
+                        ) : (
+                            <p>Loading</p>
+                        )}
                     </ResponsiveGridLayout>
                     <Pagination></Pagination>
                 </div>

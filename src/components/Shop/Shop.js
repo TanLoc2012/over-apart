@@ -52,9 +52,7 @@ function Shop() {
                     <Search child={{ borderRadius: '4px', placeHolder: 'Tìm sản phẩm tại cửa hàng' }}></Search>
                 </div>
             </div>
-            <div>
-                <AllProduct></AllProduct>
-            </div>
+            <div>{/* <AllProduct></AllProduct> */}</div>
         </div>
     );
 }

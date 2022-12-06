@@ -22,7 +22,6 @@
                 margin-left: auto;
                 margin-right: auto;
                 border-radius: 10px;
-                border: 0.5px solid #555;
             }
             .swiper {
                 width: 100%;
@@ -43,10 +42,10 @@
                             margin-left: auto;
                             margin-right: auto;
                             border-radius: 10px;
-                            border: 0.5px solid #555;
+                            border: 0.5px solid rgb(229, 225, 225);
                         }
                         .select {
-                            border: 5px solid rgb(0, 0, 0);
+                            border: 2px solid red;
                             margin-top: 0%;
                         }
                     }
@@ -57,10 +56,11 @@
             margin-left: 20px !important;
             width: 50%;
             h1 {
-                margin-bottom: 5px;
+                margin-bottom: 0px;
             }
             .code {
                 color: gray;
+                margin-bottom: 10px;
             }
             .star_box {
                 display: flex;
@@ -85,12 +85,8 @@
             .money {
                 font-size: 35px;
                 font-weight: bold;
-                margin: 6px;
-            }
-            .amount {
-                font-size: 20px;
-                font-weight: bold;
-                margin: 6px;
+                color: red;
+                margin-bottom: 12px;
             }
             button {
                 justify-content: center;
@@ -98,6 +94,7 @@
                 padding: 10px;
                 gap: 10px;
                 margin: 10px;
+                margin-left: 0;
                 width: 169px;
                 height: 46px;
                 border-radius: 57px;
@@ -137,7 +134,7 @@
                     font-family: 'Roboto';
                     font-style: normal;
                     font-weight: 400;
-                    font-size: 22px;
+                    font-size: 1.7rem;
                     line-height: 24px;
                 }
                 button {
@@ -150,40 +147,41 @@
                     height: 41px;
                     margin-top: 16px;
                     background: rgba(255, 207, 134, 0.73);
-                    font-weight: bold;
+                    font-weight: 500;
+                    border-radius: 2px;
                 }
             }
         }
         .middle_column {
+            display: flex;
+            align-items: center;
             p {
-                font-size: 110px;
-                font-weight: 100;
-                margin-top: 10px;
+                border-left: 1px solid black;
+                height: 100px;
+                text-align: center;
             }
         }
         .right_column {
-            margin-left: 104px !important;
             width: auto;
             display: flex;
             p {
                 font-family: 'Roboto';
                 font-style: normal;
                 font-weight: 400;
-                font-size: 22px;
                 line-height: 24px;
             }
             .left-left {
                 position: relative;
                 height: 100%;
                 margin-top: 60px;
-                margin-left: 34px;
+                margin-left: 80px;
                 margin-bottom: 52px;
             }
             .left-right {
                 position: relative;
                 height: 100%;
                 margin-top: 60px;
-                margin-left: 34px;
+                margin-left: 20px;
                 margin-bottom: 52px;
                 p {
                     color: red;

@@ -8,7 +8,7 @@ function AccountSideBar() {
     return (
         <div className="container account__sidebar">
             <div className="account__sidebar-avatar">
-                <Avatar child={{ imgWidth: '48px', href: '/profile', img: images.avatar }}></Avatar>
+                <img src={images.avatar} alt="Product image" style={{ width: '48px', borderRadius: '48px' }}></img>
                 <span className="">Tấn Lộc</span>
             </div>
             <div className="account__sidebar-value">

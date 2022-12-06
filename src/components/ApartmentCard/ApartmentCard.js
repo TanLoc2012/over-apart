@@ -1,21 +1,11 @@
 import './ApartmentCard.scss';
-import images from '../../assets/images';
 import { Link } from 'react-router-dom';
 
 function ApartmentCard({ product }) {
-    product = product
-        ? product
-        : {
-              img: images.a1,
-              productName: 'Chung cư Vinhome Quận 9',
-              description1: 'Chủ đầu tư: Vinhome',
-              description2: 'Địa chỉ: Quận 9, TP Hồ Chí Minh',
-          };
-
     return (
         <div className="apartment__cart">
             <div className="apartment__cart-image">
-                <Link to="/apartment-detail">
+                <Link to={`/apartment-detail/${product.id}`}>
                     <img src={product.img} alt="Product image"></img>
                 </Link>
             </div>

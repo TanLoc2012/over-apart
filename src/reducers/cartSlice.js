@@ -11,9 +11,15 @@ export const cartSlice = createSlice({
             if (shop) {
                 const itemInShop = shop.products.find((item) => item.product.id === action.payload.product.id);
                 if (itemInShop) {
-                    itemInShop.quantity++;
+                    itemInShop.quantity = action.payload.quantityProduct
+                        ? Number(itemInShop.quantity) + Number(action.payload.quantityProduct)
+                        : itemInShop.quantity++;
                 } else {
-                    shop.products.push({ ...action.payload, quantity: 1, isChecked: false });
+                    shop.products.push({
+                        ...action.payload,
+                        quantity: action.payload.quantityProduct || 1,
+                        isChecked: false,
+                    });
                 }
             } else {
                 state.cart.push({
@@ -28,8 +34,11 @@ export const cartSlice = createSlice({
             const shop = state.cart.find((item) => item.shopName === action.payload.product.shop);
             if (shop) {
                 const itemInShop = shop.products.find((item) => item.product.id === action.payload.product.id);
-                if (itemInShop.quantity === 1) {
+                if (itemInShop) {
                     shop.products = shop.products.filter((item) => item.product.id !== itemInShop.product.id);
+                    if (shop.products.length === 0) {
+                        state.cart = state.cart.filter((item) => item.shopName !== shop.shopName);
+                    }
                     localStorage.setItem('cart', JSON.stringify(state.cart));
                 }
             }
@@ -89,6 +98,16 @@ export const cartSlice = createSlice({
                 localStorage.setItem('cart', JSON.stringify(state.cart));
             }
         },
+        changeQuantityProduct: (state, action) => {
+            const shop = state.cart.find((item) => item.shopName === action.payload.product.product.shop);
+            if (shop) {
+                const itemInShop = shop.products.find((item) => item.product.id === action.payload.product.product.id);
+                if (itemInShop) {
+                    itemInShop.quantity = action.payload.quantity;
+                    localStorage.setItem('cart', JSON.stringify(state.cart));
+                }
+            }
+        },
     },
 });
 
@@ -100,15 +119,7 @@ export const {
     selectAll,
     incrementQuantity,
     removeProductInCart,
+    changeQuantityProduct,
 } = cartSlice.actions;
 
 export const cartReducer = cartSlice.reducer;
-
-// const shop = {
-//     'shopName': '1111',
-//     'products': [
-//         {
-
-//         }
-//     ]
-// }

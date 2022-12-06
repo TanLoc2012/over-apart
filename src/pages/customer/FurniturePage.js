@@ -4,7 +4,6 @@ import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import AllProduct from '../../components/AllProduct/AllProduct';
 import ImageSlider from '../../components/ImageSlider/ImageSlider';
 import { Fragment, useEffect, useState } from 'react';
-import images from '../../assets/images';
 import axios from 'axios';
 import ProductCard from '../../components/ProductCard/ProductCard';
 
@@ -29,6 +28,7 @@ function FurniturePage() {
             setTrendPrediction({
                 headerText: 'Dự đoán xu hướng',
                 pathHeaderText: '',
+                type: 'product',
                 productInfos: reponse.data,
             });
         });
@@ -39,6 +39,7 @@ function FurniturePage() {
             setProductFeautured({
                 headerText: 'Nội thất nổi bật',
                 pathHeaderText: '',
+                type: 'product',
                 productInfos: reponse.data,
             });
         });
@@ -52,6 +53,7 @@ function FurniturePage() {
             });
             setListCard({
                 component: result,
+                type: 'product',
             });
         });
     }, []);

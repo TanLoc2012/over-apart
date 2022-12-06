@@ -1,23 +1,11 @@
 import './ProductCard.scss';
-import images from '../../assets/images';
 import { Link } from 'react-router-dom';
 
-function ProductCard({ product }) {
-    product = product
-        ? product
-        : {
-              id: 1,
-              img: images.f1,
-              productName: 'Bộ bàn ghế Barcelona',
-              rating: 5,
-              sold: 20,
-              price: '6.900.000 đ',
-          };
-
+function ProductCard({ product, type }) {
     return (
         <div className="product__cart">
             <div className="product__cart-image">
-                <Link to={`/product/${product.id}`}>
+                <Link to={`/${type}/${product.id}`}>
                     <img src={product.img} alt="Product image"></img>
                 </Link>
             </div>

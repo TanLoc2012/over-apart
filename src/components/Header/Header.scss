@@ -18,7 +18,6 @@
                 height: 34px;
             }
         }
-
         .header__nav {
             display: flex;
             gap: 30px;
@@ -35,14 +34,25 @@
                 color: var(--nav-bar);
                 font-weight: 600;
             }
+            .header__nav-item-furniture {
+                font-weight: 600;
+                height: 60px;
+                display: flex;
+                align-items: center;
 
+                &:hover {
+                    .furniture__hover {
+                        display: block;
+                    }
+                }
+            }
             .header__nav-cart-list {
                 display: none;
                 width: 350px;
                 background-color: white;
                 position: absolute;
                 top: 100%;
-                right: 31%;
+                right: -22px;
                 z-index: 10000;
                 gap: 4px;
                 border-radius: 2px;
@@ -53,7 +63,7 @@
                     position: absolute;
                     background-color: white;
                     right: 24px;
-                    top: -10px;
+                    top: -9px;
                     width: 18px;
                     height: 18px;
                     transform: rotate(45deg);
@@ -96,6 +106,7 @@
             }
             .header__cart-wrapper {
                 height: 100%;
+                position: relative;
                 &:hover {
                     .header__nav-cart-list {
                         display: block;
@@ -106,9 +117,7 @@
                     height: 24px;
                     width: 24px;
                     position: relative;
-                    &:hover + .header__nav-cart-list {
-                        display: block;
-                    }
+
                     .header__nav__cart {
                         height: 24px;
                         width: 24px;
@@ -148,6 +157,93 @@
                     top: 23%;
                     left: 110%;
                     position: absolute;
+                }
+            }
+        }
+
+        .furniture__hover {
+            min-width: 150px;
+            font-size: 1.4rem;
+            font-weight: 400;
+            display: none;
+            position: absolute;
+            background-color: white;
+            top: 100%;
+            left: -20px;
+            z-index: 10000;
+            border-radius: 2px;
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+            padding-top: 13px;
+            &::after {
+                content: '';
+                position: absolute;
+                background-color: white;
+                left: 35px;
+                top: -9px;
+                width: 18px;
+                height: 18px;
+                transform: rotate(45deg);
+            }
+        }
+        .item-hover {
+            min-width: 150px;
+            font-size: 1.4rem;
+            font-weight: 400;
+            display: none;
+            position: absolute;
+            background-color: white;
+            top: 0;
+            left: 150px;
+            z-index: 10000;
+            border-radius: 2px;
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+            padding-top: 13px;
+            ol {
+                list-style: none;
+            }
+        }
+        .item-hover1 {
+            min-width: 200px;
+            font-size: 1.4rem;
+            font-weight: 400;
+            display: none;
+            position: absolute;
+            background-color: white;
+            top: 0;
+            left: 150px;
+            z-index: 10000;
+            border-radius: 2px;
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+            padding-top: 13px;
+            ol {
+                list-style: none;
+            }
+        }
+        .furniture__hover-item {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            cursor: pointer;
+            padding: 4px;
+            padding-right: 16px;
+            &:hover {
+                background-color: var(--primary);
+                .item-hover {
+                    display: block;
+                }
+            }
+        }
+        .furniture__hover-item1 {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            cursor: pointer;
+            padding: 4px;
+            padding-right: 16px;
+            &:hover {
+                background-color: var(--primary);
+                .item-hover1 {
+                    display: block;
                 }
             }
         }

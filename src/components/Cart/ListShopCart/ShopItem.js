@@ -6,15 +6,25 @@ import { useDispatch } from 'react-redux';
 import {
     decrementQuantity,
     selectItem,
-    addToCart,
     incrementQuantity,
     removeProductInCart,
+    changeQuantityProduct,
 } from '../../../reducers/cartSlice';
+import { useState } from 'react';
 
 function ShopItem({ item }) {
     const dispath = useDispatch();
     const product = item;
+    const [quantityProduct, setQuantityProduct] = useState(item.quantity);
 
+    const handleBlurInputQuantity = (e) => {
+        const quantity = e.target.value;
+        dispath(changeQuantityProduct({ product, quantity }));
+    };
+
+    const hanldeChangeInputQuantity = (e) => {
+        setQuantityProduct(e.target.value);
+    };
     return (
         <div className="shop__item">
             <input
@@ -39,13 +49,25 @@ function ShopItem({ item }) {
                     <FontAwesomeIcon
                         icon={faMinus}
                         className="quantity__icon"
-                        onClick={() => dispath(decrementQuantity(item))}
+                        onClick={() => {
+                            setQuantityProduct(quantityProduct - 1);
+                            dispath(decrementQuantity(item));
+                        }}
                     />
-                    <input type="text" className="quantity__number" value={item.quantity}></input>
+                    <input
+                        type="text"
+                        className="quantity__number"
+                        value={quantityProduct}
+                        onChange={hanldeChangeInputQuantity}
+                        onBlur={handleBlurInputQuantity}
+                    ></input>
                     <FontAwesomeIcon
                         icon={faPlus}
                         className="quantity__icon"
-                        onClick={() => dispath(incrementQuantity(item))}
+                        onClick={() => {
+                            setQuantityProduct(quantityProduct + 1);
+                            dispath(incrementQuantity(item));
+                        }}
                     />
                 </div>
             </div>

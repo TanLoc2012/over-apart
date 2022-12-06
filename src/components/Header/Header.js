@@ -1,23 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faMagnifyingGlass, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-
+import { useState } from 'react';
 import './Header.scss';
 import Search from '../Search/Search';
 import images from '../../assets/images';
 import Avatar from '../Avatar/Avatar';
 import ListCartItem from './ListCartItem';
 import { useSelector } from 'react-redux';
+import axios from 'axios';
 
 function Header() {
     const [displaySearch, setDisplaySearch] = useState(false);
+    const [category, setCategory] = useState();
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/category').then((reponse) => setCategory(reponse.data));
+    });
+
     const handleDisplaySearch = () => {
         setDisplaySearch(!displaySearch);
     };
 
-    const cart = useSelector((state) => state.cart);
+    const cart = useSelector((state) => state.cart.cart);
+
     let listProductInCart = [];
     cart.map((shop) => {
         shop.products.map((product) => listProductInCart.push(product));
@@ -32,9 +39,48 @@ function Header() {
                     </Link>
                 </div>
                 <nav className="header__nav">
-                    <Link to="/furniture" className="header__nav-item">
-                        Nội thất
-                    </Link>
+                    <div className="header__nav-item-furniture">
+                        <Link to="/furniture" style={{ color: '#003459' }}>
+                            Nội thất
+                        </Link>
+                        <div className="furniture__hover">
+                            {category?.map((item) => (
+                                <div key={item.id} className="furniture__hover-item">
+                                    <FontAwesomeIcon
+                                        style={{ color: 'red', fontSize: '12px' }}
+                                        icon={faAngleRight}
+                                    ></FontAwesomeIcon>
+                                    <div>{item.name}</div>
+                                    <div className="item-hover">
+                                        <ol>
+                                            {item.subCategory.map((subCategory) => (
+                                                <li key={subCategory.id} className="furniture__hover-item1">
+                                                    <FontAwesomeIcon
+                                                        style={{ color: 'red', fontSize: '12px' }}
+                                                        icon={faAngleRight}
+                                                    ></FontAwesomeIcon>
+                                                    <div>{subCategory.name}</div>
+                                                    <div className="item-hover1">
+                                                        <ol>
+                                                            {subCategory.products.map((product) => (
+                                                                <li
+                                                                    key={product.id}
+                                                                    style={{ paddingLeft: 12 }}
+                                                                    className="furniture__hover-item"
+                                                                >
+                                                                    {product.name}
+                                                                </li>
+                                                            ))}
+                                                        </ol>
+                                                    </div>
+                                                </li>
+                                            ))}
+                                        </ol>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                     <Link to="/sample-design" className="header__nav-item">
                         Thiết kế mẫu
                     </Link>
@@ -70,7 +116,7 @@ function Header() {
                             <div className="header__nav-cart-list-header">Sản phẩm mới thêm</div>
                             <div className="header__nav-cart-list-body">
                                 {listProductInCart?.map((item) => (
-                                    <ListCartItem product={item.product} />
+                                    <ListCartItem key={item.product.id} product={item.product} />
                                 ))}
                             </div>
                             <div className="header__nav-cart-list-footer">
@@ -93,7 +139,7 @@ function Header() {
                             Đăng nhập
                         </Link>
                     </div> */}
-                    <Avatar child={{ imgWidth: '36px', href: '/', img: images.avatar }} />
+                    <Avatar child={{ imgWidth: '36px', href: '/profile', img: images.avatar }} />
                 </nav>
             </header>
         </div>

@@ -115,7 +115,11 @@ function ProfilePage() {
                         </form>
                         <div className="profile__info-body-right">
                             <div className="profile__info-body-right-avatar">
-                                <Avatar child={{ imgWidth: '100px', href: '/', img: images.avatar }}></Avatar>
+                                <img
+                                    src={images.avatar}
+                                    alt="Product image"
+                                    style={{ width: '100px', borderRadius: '100px' }}
+                                ></img>
                                 <button>Chọn ảnh</button>
                                 <div>
                                     Dụng lượng file tối đa 1 MB

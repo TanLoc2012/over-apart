@@ -1,15 +1,51 @@
+import './ApartmentDetailPage.scss';
+import axios from 'axios';
 import Footer from '../../../components/Footer/Footer';
 import Header from '../../../components/Header/Header';
 import Breadcrumb from '../../../components/Breadcrumb/Breadcrumb';
 import ImageSlider from '../../../components/ImageSlider/ImageSlider';
-import images from '../../../assets/images';
-import { Fragment } from 'react';
-import ApartmentCard from '../../../components/ApartmentCard/ApartmentCard';
 import AllProduct from '../../../components/AllProduct/AllProduct';
 import ProductCard from '../../../components/ProductCard/ProductCard';
-import './ApartmentDetailPage.scss';
+import { Fragment, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 function ApartmentDetailPage() {
+    const [listLayout, setListLayout] = useState();
+    const [listCard, setListCard] = useState();
+    const [apartment, setApartment] = useState();
+    const params = useParams();
+
+    useEffect(() => {
+        axios
+            .get(`http://localhost:5000/real-project/${params.apartmentId}`)
+            .then((reponse) => setApartment(reponse.data));
+    }, []);
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/layouts').then((reponse) =>
+            setListLayout({
+                headerText: 'Layout',
+                pathHeaderText: '',
+                isDisplayShowMore: 'none',
+                component: 'apartment',
+                productInfos: reponse.data,
+            }),
+        );
+    }, []);
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/sample-design').then((reponse) => {
+            let result = [];
+            reponse.data.map((product) => {
+                result.push(<ProductCard product={product}></ProductCard>);
+            });
+            setListCard({
+                component: result,
+                type: 'apartment-detail',
+            });
+        });
+    }, []);
+
     const breadcrumb = [
         {
             path: '/',
@@ -24,57 +60,7 @@ function ApartmentDetailPage() {
             content: 'Chung cư Vinhome Quận 9',
         },
     ];
-    const listLayout = {
-        headerText: 'Layout',
-        pathHeaderText: '',
-        isDisplayShowMore: 'none',
-        component: <ApartmentCard></ApartmentCard>,
-        productInfos: [
-            {
-                img: images.l1,
-                productName: 'Layout lô A',
-                description1: 'Diện tích: 400m2',
-                description2: 'Loại phòng: Căn hộ chung cư',
-            },
-            {
-                img: images.l1,
-                productName: 'Layout lô B',
-                description1: 'Diện tích: 400m2',
-                description2: 'Loại phòng: Căn hộ chung cư',
-            },
-            {
-                img: images.l1,
-                productName: 'Layout lô C',
-                description1: 'Diện tích: 400m2',
-                description2: 'Loại phòng: Căn hộ chung cư',
-            },
-            {
-                img: images.l1,
-                productName: 'Layout lô D',
-                description1: 'Diện tích: 400m2',
-                description2: 'Loại phòng: Căn hộ chung cư',
-            },
-            {
-                img: images.l1,
-                productName: 'Layout lô E',
-                description1: 'Diện tích: 400m2',
-                description2: 'Loại phòng: Căn hộ chung cư',
-            },
-        ],
-    };
-    const listDesign = {
-        component: (
-            <ProductCard
-                product={{
-                    img: images.p1,
-                    productName: 'Photo - Blue kitchen',
-                    isVIP: 'FREE',
-                    rating: 5,
-                    price: '6.900.000 đ',
-                }}
-            ></ProductCard>
-        ),
-    };
+
     return (
         <Fragment>
             <Header></Header>
@@ -95,8 +81,8 @@ function ApartmentDetailPage() {
                     <div>Chủ đầu tư: Công ty Cổ phần Hưng Thịnh Land</div>
                     <div>Tổng diện tích: 2 ha</div>
                 </div>
-                <ImageSlider child={listLayout}></ImageSlider>
-                <AllProduct headerTitle={'Thiết kế mẫu'} listCard={listDesign}></AllProduct>
+                {listLayout ? <ImageSlider child={listLayout}></ImageSlider> : <p>Loading</p>}
+                {listCard ? <AllProduct headerTitle={'Thiết kế mẫu'} listCard={listCard}></AllProduct> : <p>Loading</p>}
             </div>
             <Footer></Footer>
         </Fragment>

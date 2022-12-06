@@ -274,5 +274,234 @@
             "description1": "Chủ đầu tư: Vinhome",
             "description2": "Địa chỉ: Quận 9, TP Hồ Chí Minh"
         }
+    ],
+    "layouts": [
+        {
+            "id": 1,
+            "img": "https://homeseek.vn/uploads/2021/06/mat-bang-chung-cu-la-gi.png",
+            "productName": "BARTHE 2",
+            "description1": "Diện tích: 400m2",
+            "description2": "Loại phòng: Căn hộ chung cư"
+        },
+        {
+            "id": 2,
+            "img": "https://homeseek.vn/uploads/2021/06/mat-bang-chung-cu-la-gi.png",
+            "productName": "Joss-and-main",
+            "description1": "Diện tích: 400m2",
+            "description2": "Loại phòng: Căn hộ chung cư"
+        },
+        {
+            "id": 3,
+            "img": "https://homeseek.vn/uploads/2021/06/mat-bang-chung-cu-la-gi.png",
+            "productName": "Maisons-du-monde",
+            "description1": "Diện tích: 400m2",
+            "description2": "Loại phòng: Căn hộ chung cư"
+        },
+        {
+            "id": 4,
+            "img": "https://homeseek.vn/uploads/2021/06/mat-bang-chung-cu-la-gi.png",
+            "productName": "Allmodern",
+            "description1": "Diện tích: 400m2",
+            "description2": "Loại phòng: Căn hộ chung cư"
+        },
+        {
+            "id": 5,
+            "img": "https://homeseek.vn/uploads/2021/06/mat-bang-chung-cu-la-gi.png",
+            "productName": "Am-pm ",
+            "description1": "Diện tích: 400m2",
+            "description2": "Loại phòng: Căn hộ chung cư"
+        },
+        {
+            "id": 6,
+            "img": "https://homeseek.vn/uploads/2021/06/mat-bang-chung-cu-la-gi.png",
+            "productName": "CARLIER Justine Projet perso",
+            "description1": "Diện tích: 400m2",
+            "description2": "Loại phòng: Căn hộ chung cư"
+        },
+        {
+            "id": 7,
+            "img": "https://homeseek.vn/uploads/2021/06/mat-bang-chung-cu-la-gi.png",
+            "productName": "Isidore-leroy",
+            "description1": "Diện tích: 400m2",
+            "description2": "Loại phòng: Căn hộ chung cư"
+        },
+        {
+            "id": 8,
+            "img": "https://homeseek.vn/uploads/2021/06/mat-bang-chung-cu-la-gi.png",
+            "productName": "Villa Maryse",
+            "description1": "Diện tích: 400m2",
+            "description2": "Loại phòng: Căn hộ chung cư"
+        },
+        {
+            "id": 9,
+            "img": "https://homeseek.vn/uploads/2021/06/mat-bang-chung-cu-la-gi.png",
+            "productName": "Projet Bryus",
+            "description1": "Diện tích: 400m2",
+            "description2": "Loại phòng: Căn hộ chung cư"
+        }
+    ],
+    "user": [
+        {
+            "id": 1,
+            "name": "Tấn Lộc"
+        }
+    ],
+    "category": [
+        {
+            "id": 1,
+            "name": "Nội thất gỗ",
+            "subCategory": [
+                {
+                    "id": 1,
+                    "name": "Ghế",
+                    "products": [
+                        {
+                            "id": 1,
+                            "name": "Hoa và lọ hoa 1"
+                        },
+                        {
+                            "id": 2,
+                            "name": "Vật trang trí 1"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Khung và Tranh ảnh 1"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "name": "Tủ",
+                    "products": [
+                        {
+                            "id": 1,
+                            "name": "Hoa và lọ hoa 2"
+                        },
+                        {
+                            "id": 2,
+                            "name": "Vật trang trí"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Khung và Tranh ảnh"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "name": "Giường",
+                    "products": [
+                        {
+                            "id": 1,
+                            "name": "Hoa và lọ hoa 3"
+                        },
+                        {
+                            "id": 2,
+                            "name": "Vật trang trí"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Khung và Tranh ảnh"
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "name": "Nội thất cho bé",
+                    "products": [
+                        {
+                            "id": 1,
+                            "name": "Hoa và lọ hoa 4"
+                        },
+                        {
+                            "id": 2,
+                            "name": "Vật trang trí"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Khung và Tranh ảnh"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Đồ trang trí",
+            "subCategory": [
+                {
+                    "id": 1,
+                    "name": "Đèn",
+                    "products": [
+                        {
+                            "id": 1,
+                            "name": "Hoa và lọ hoa 5"
+                        },
+                        {
+                            "id": 2,
+                            "name": "Vật trang trí"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Khung và Tranh ảnh"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "name": "Hoa và lọ hoa",
+                    "products": [
+                        {
+                            "id": 1,
+                            "name": "Hoa và lọ hoa 6"
+                        },
+                        {
+                            "id": 2,
+                            "name": "Vật trang trí"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Khung và Tranh ảnh"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "name": "Vật trang trí",
+                    "products": [
+                        {
+                            "id": 1,
+                            "name": "Hoa và lọ hoa 7"
+                        },
+                        {
+                            "id": 2,
+                            "name": "Vật trang trí"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Khung và Tranh ảnh"
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "name": "Khung và Tranh ảnh",
+                    "products": [
+                        {
+                            "id": 1,
+                            "name": "Hoa và lọ hoa 8"
+                        },
+                        {
+                            "id": 2,
+                            "name": "Vật trang trí"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Khung và Tranh ảnh"
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

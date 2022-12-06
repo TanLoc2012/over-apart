@@ -34,7 +34,7 @@ function App() {
                 <Route path="/address" element={<MyAddressPage />}></Route>
                 <Route path="/my-purchase" element={<MyPurchasePage />}></Route>
                 <Route path="/my-wishlist" element={<FavoritesPage />}></Route>
-                <Route path="/apartment-detail" element={<ApartmentDetailPage />}></Route>
+                <Route path="/apartment-detail/:apartmentId" element={<ApartmentDetailPage />}></Route>
                 <Route path="/design2d" element={<Design2D />}></Route>
                 <Route path="/login" element={<LoginPage />}></Route>
             </Routes>

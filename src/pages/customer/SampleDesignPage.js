@@ -18,6 +18,7 @@ function SampleDesignPage() {
             setDesignFeautured({
                 headerText: 'Thiết kế nổi bật',
                 pathHeaderText: '',
+                type: 'project',
                 productInfos: reponse.data,
             });
         });
@@ -42,6 +43,7 @@ function SampleDesignPage() {
             });
             setListCard({
                 component: result,
+                type: 'project',
             });
         });
     }, []);

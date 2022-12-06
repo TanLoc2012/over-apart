@@ -11,8 +11,8 @@ function Breadcrumb({ child }) {
                 c.path === '' ? (
                     <span key={c.content}>{c.content}</span>
                 ) : (
-                    <Fragment>
-                        <Link key={c.content} to={c.path} className="breadcrumb__path">
+                    <Fragment key={c.content}>
+                        <Link to={c.path} className="breadcrumb__path">
                             {c.content}
                         </Link>
                         <FontAwesomeIcon icon={faAngleRight} className="breadcrumb__icon" />

@@ -1,8 +1,13 @@
 import images from '../../assets/images';
 import './authentication.scss';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { userLogIn } from '../../reducers/userSlice';
 
 function LoginPage() {
+    const dispath = useDispatch();
+    const userInfo = useSelector((state) => state.user.user);
+
     return (
         <div className="login">
             <img className="login__image" src={images.p1} alt="login image"></img>

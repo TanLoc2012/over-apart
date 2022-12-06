@@ -44,6 +44,7 @@ function RealProjectPage() {
             });
             setListCard({
                 component: result,
+                type: 'apartment-detail',
             });
         });
     }, []);

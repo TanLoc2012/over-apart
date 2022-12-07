@@ -1,0 +1,56 @@
+.list__project-card {
+    .my-project__card {
+        margin-bottom: 20px;
+        width: 380px;
+        background-color: #fff;
+        border: thin solid #ededed;
+        border-radius: 4px;
+        box-shadow: 0 2px 20px 0 rgba(33, 33, 33, 0.05);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.15);
+            transform: translateY(-4px);
+            z-index: 10;
+            .cart__icon {
+                opacity: 1;
+                transform: translateY(-120%);
+            }
+        }
+        img {
+            width: 100%;
+            height: 238px;
+        }
+        .my-project__card-info {
+            margin: 8px;
+        }
+        .cart__image {
+            position: relative;
+            cursor: pointer;
+        }
+        .cart__icon {
+            opacity: 0;
+            transform: translateY(0);
+            position: absolute;
+            display: flex;
+            gap: 12px;
+            bottom: -30px;
+            left: 15%;
+            transition: all 0.3s ease-in-out;
+            z-index: 1;
+        }
+        .icon-edit {
+            background-color: #1591dd;
+            color: #fff;
+            font-size: 1.8rem;
+            padding: 6px 20px;
+            border-radius: 2px;
+            cursor: pointer;
+            &:hover {
+                background-color: #136394;
+            }
+        }
+    }
+}

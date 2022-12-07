@@ -1,0 +1,45 @@
+.avatar {
+    position: relative;
+    height: 100%;
+    margin-top: 21px;
+    .avatar__image {
+        width: var(--heigth-avatar);
+        border-radius: 50%;
+        margin: auto;
+    }
+    .account__nav {
+        opacity: 0;
+        transition: all 0.3s linear;
+        transform: translateY(-6px);
+        position: absolute;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 150px;
+        padding: 8px 12px 8px 8px;
+        top: 82%;
+        right: -15px;
+        z-index: 10000;
+        border-radius: 2px;
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+        visibility: hidden;
+        &:after {
+            content: '';
+            position: absolute;
+            background-color: white;
+            right: 23px;
+            top: -8px;
+            width: 22px;
+            height: 18px;
+            transform: rotate(45deg);
+        }
+    }
+    &:hover {
+        .account__nav {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+    }
+}

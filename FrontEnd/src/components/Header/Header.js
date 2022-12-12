@@ -10,13 +10,27 @@ import Avatar from '../Avatar/Avatar';
 import ListCartItem from './ListCartItem';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
+import { url } from '../../configs';
 
 function Header() {
     const [displaySearch, setDisplaySearch] = useState(false);
     const [category, setCategory] = useState();
+    const [roomType, setRoomType] = useState();
 
     useEffect(() => {
-        axios.get('http://localhost:5000/category').then((reponse) => setCategory(reponse.data));
+        axios.get(`${url}/api/category`).then((reponse) => setCategory(reponse.data));
+    }, []);
+
+    useEffect(() => {
+        axios.get(`${url}/api/room-type`).then((reponse) => {
+            setRoomType([
+                {
+                    id: 1,
+                    name: 'Phòng',
+                    rooms: reponse.data,
+                },
+            ]);
+        });
     }, []);
 
     const handleDisplaySearch = () => {
@@ -44,6 +58,41 @@ function Header() {
                             Nội thất
                         </Link>
                         <div className="furniture__hover">
+                            {roomType?.map((type) => (
+                                <div key={type.id} className="furniture__hover-item">
+                                    <FontAwesomeIcon
+                                        style={{ color: 'red', fontSize: '12px' }}
+                                        icon={faAngleRight}
+                                    ></FontAwesomeIcon>
+                                    <div>{type.name}</div>
+                                    <div className="item-hover">
+                                        <ol>
+                                            {type.rooms.map((room) => (
+                                                <li key={room.id} className="furniture__hover-item1">
+                                                    <FontAwesomeIcon
+                                                        style={{ color: 'red', fontSize: '12px' }}
+                                                        icon={faAngleRight}
+                                                    ></FontAwesomeIcon>
+                                                    <div>{room.name}</div>
+                                                    <div className="item-hover1">
+                                                        <ol>
+                                                            {room.categoryEntityList.map((category) => (
+                                                                <li
+                                                                    key={category.id}
+                                                                    style={{ paddingLeft: 12 }}
+                                                                    className="furniture__hover-item"
+                                                                >
+                                                                    {category.name}
+                                                                </li>
+                                                            ))}
+                                                        </ol>
+                                                    </div>
+                                                </li>
+                                            ))}
+                                        </ol>
+                                    </div>
+                                </div>
+                            ))}
                             {category?.map((item) => (
                                 <div key={item.id} className="furniture__hover-item">
                                     <FontAwesomeIcon
@@ -60,19 +109,6 @@ function Header() {
                                                         icon={faAngleRight}
                                                     ></FontAwesomeIcon>
                                                     <div>{subCategory.name}</div>
-                                                    <div className="item-hover1">
-                                                        <ol>
-                                                            {subCategory.products.map((product) => (
-                                                                <li
-                                                                    key={product.id}
-                                                                    style={{ paddingLeft: 12 }}
-                                                                    className="furniture__hover-item"
-                                                                >
-                                                                    {product.name}
-                                                                </li>
-                                                            ))}
-                                                        </ol>
-                                                    </div>
                                                 </li>
                                             ))}
                                         </ol>

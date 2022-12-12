@@ -349,35 +349,19 @@
     "category": [
         {
             "id": 1,
-            "name": "Nội thất gỗ",
+            "name": "Phong",
             "subCategory": [
                 {
                     "id": 1,
-                    "name": "Ghế",
+                    "name": "Phong an",
                     "products": [
                         {
                             "id": 1,
-                            "name": "Ghế ăn"
+                            "name": "Ban an"
                         },
                         {
                             "id": 2,
                             "name": "Ghế dài"
-                        },
-                        {
-                            "id": 3,
-                            "name": "Ghế ngoài trời"
-                        },
-                        {
-                            "id": 4,
-                            "name": "Ghế đôn"
-                        },
-                        {
-                            "id": 5,
-                            "name": "Ghế bậc"
-                        },
-                        {
-                            "id": 6,
-                            "name": "Ghế văn phòng"
                         }
                     ]
                 },

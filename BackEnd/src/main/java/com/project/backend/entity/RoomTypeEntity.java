@@ -1,5 +1,6 @@
 package com.project.backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,6 +20,7 @@ public class RoomTypeEntity {
     private String name;
 
     @OneToMany(mappedBy = "roomType")
+    @JsonIgnore
     private List<SampleDesignEntity> sampleDesignEntityList;
 
     @ManyToMany(targetEntity = CategoryEntity.class)

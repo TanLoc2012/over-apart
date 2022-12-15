@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity @Getter @Setter @NoArgsConstructor @AllArgsConstructor
@@ -28,6 +29,9 @@ public class ProductEntity {
     @Column(name = "warranty")
     private String warranty;
 
+    @Column(name = "code")
+    private String code;
+
     @Column(name = "origin")
     private String origin;
 
@@ -43,13 +47,16 @@ public class ProductEntity {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @Column(name = "created_at", nullable = false)
+    private LocalDate createdAt;
 
-    @ManyToOne
-    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "seller_id", nullable = false)
+    @JsonIgnore
     private UserEntity seller;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
     @JoinColumn(name = "category_id", nullable = false)
     private CategoryEntity category;
 
@@ -66,5 +73,6 @@ public class ProductEntity {
     private List<AttributeEntity> attributeEntityList;
 
     @OneToMany(mappedBy = "product")
+    @JsonIgnore
     private List<ProductImageEntity> productImageEntityList;
 }

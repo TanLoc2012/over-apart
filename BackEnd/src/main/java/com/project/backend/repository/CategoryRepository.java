@@ -10,9 +10,6 @@ import java.util.List;
 
 @Repository
 public interface CategoryRepository extends JpaRepository<CategoryEntity, Long> {
-    @Query("SELECT c FROM CategoryEntity c WHERE c.parentCategoryId=?1")
-    public List<CategoryEntity> getAllCategory(Long parentCategoryId);
+    public List<CategoryEntity> getCategoryByParentCategoryId(Long parentCategoryId);
 
-//    @Query("SELECT c.productEntityList FROM CategoryEntity c WHERE c.id=?1")
-//    public  List<ProductEntity> getAllProductByCategoryId(Long categoryId);
 }

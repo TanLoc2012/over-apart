@@ -1,5 +1,6 @@
 package com.project.backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,5 +23,6 @@ public class CategoryEntity {
     private Long parentCategoryId;
 
     @OneToMany(mappedBy = "category")
+    @JsonIgnore
     private List<ProductEntity> productEntityList;
 }

@@ -15,15 +15,12 @@ public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
     public List<CategoryResponse> getAllCategory(){
-        List<CategoryEntity> parentCategory = categoryRepository.getAllCategory(Long.valueOf(0));
+        List<CategoryEntity> parentCategory = categoryRepository.getCategoryByParentCategoryId(Long.valueOf(0));
         List<CategoryResponse> categoryResponseList = new ArrayList<>();
         for(CategoryEntity categoryEntity: parentCategory){
             categoryResponseList.add(new CategoryResponse(categoryEntity.getId()
-                    , categoryEntity.getName(), categoryRepository.getAllCategory(Long.valueOf(categoryEntity.getId()))));
+                    , categoryEntity.getName(), categoryRepository.getCategoryByParentCategoryId(Long.valueOf(categoryEntity.getId()))));
         }
         return categoryResponseList;
     }
-//    public List<ProductEntity> getAllProductByCategoryId(Long categoryId){
-//        return categoryRepository.getAllProductByCategoryId(categoryId);
-//    }
 }

@@ -6,7 +6,7 @@ function ProductCard({ product, type }) {
         <div className="product__cart">
             <div className="product__cart-image">
                 <Link to={`/${type}/${product.id}`}>
-                    <img src={product.img} alt="Product image"></img>
+                    <img src={product.image} alt="Product image"></img>
                 </Link>
             </div>
             <div className="product__card-info">
@@ -15,10 +15,10 @@ function ProductCard({ product, type }) {
                     <div className="product__card-info-rating">★★★★★</div>
                     <div className="product__card-info-seperate"></div>
 
-                    {product.sold ? (
-                        <div className="product__card-info-quantity">Đã bán {product.sold}</div>
-                    ) : (
+                    {product.isVIP ? (
                         <div className="product__card-info-quantity">{product.isVIP}</div>
+                    ) : (
+                        <div className="product__card-info-quantity">Đã bán {product.sold}</div>
                     )}
                 </div>
                 <p className="product__card-info-price">

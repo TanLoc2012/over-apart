@@ -19,7 +19,7 @@ function HomePage() {
     };
 
     const [categoryActive, setCategoryActive] = useState('Ghế');
-    const listCategory = ['Tủ', 'Bàn', 'Giường', 'Ghế', 'Đèn', 'Tranh'];
+    const listCategory = ['Bàn', 'Ghế', 'Tủ', 'Giường', 'Gương', 'Đèn'];
 
     return (
         <Fragment>

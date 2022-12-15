@@ -35,7 +35,7 @@ function ShopItem({ item }) {
             ></input>
             <div className="cart__name shop__item-img-name">
                 <Link to="">
-                    <img src={item.product.img} alt="Product image" className="shop__item-img"></img>
+                    <img src={item.product.images[0]} alt="Product image" className="shop__item-img"></img>
                 </Link>
                 <Link to="">
                     <span className="shop__item-name">{item.product.productName}</span>

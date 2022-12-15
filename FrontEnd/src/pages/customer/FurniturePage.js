@@ -5,9 +5,36 @@ import AllProduct from '../../components/AllProduct/AllProduct';
 import ImageSlider from '../../components/ImageSlider/ImageSlider';
 import { Fragment, useEffect, useState } from 'react';
 import axios from 'axios';
-import ProductCard from '../../components/ProductCard/ProductCard';
+import { url } from '../../configs';
+import { useParams } from 'react-router-dom';
 
 function FurniturePage() {
+    const [trendPrediction, setTrendPrediction] = useState();
+    const [productFeautured, setProductFeautured] = useState();
+    const params = useParams();
+
+    useEffect(() => {
+        axios.get(`${url}/api/product/hot-sale/category/${params.categoryId}`).then((reponse) => {
+            setTrendPrediction({
+                headerText: 'Dự đoán xu hướng',
+                pathHeaderText: '',
+                type: 'product',
+                productInfos: reponse.data,
+            });
+        });
+    }, []);
+
+    useEffect(() => {
+        axios.get(`${url}/api/product/hot-sale/category/${params.categoryId}`).then((reponse) => {
+            setProductFeautured({
+                headerText: 'Nội thất nổi bật',
+                pathHeaderText: '',
+                type: 'product',
+                productInfos: reponse.data,
+            });
+        });
+    }, []);
+
     const breadcrumb = [
         {
             path: '/',
@@ -19,45 +46,6 @@ function FurniturePage() {
         },
     ];
 
-    const [trendPrediction, setTrendPrediction] = useState();
-    const [productFeautured, setProductFeautured] = useState();
-    const [listCard, setListCard] = useState();
-
-    useEffect(() => {
-        axios.get('http://localhost:5000/products').then((reponse) => {
-            setTrendPrediction({
-                headerText: 'Dự đoán xu hướng',
-                pathHeaderText: '',
-                type: 'product',
-                productInfos: reponse.data,
-            });
-        });
-    }, []);
-
-    useEffect(() => {
-        axios.get('http://localhost:5000/products').then((reponse) => {
-            setProductFeautured({
-                headerText: 'Nội thất nổi bật',
-                pathHeaderText: '',
-                type: 'product',
-                productInfos: reponse.data,
-            });
-        });
-    }, []);
-
-    useEffect(() => {
-        axios.get('http://localhost:5000/products').then((reponse) => {
-            let result = [];
-            reponse.data.map((product) => {
-                result.push(<ProductCard product={product}></ProductCard>);
-            });
-            setListCard({
-                component: result,
-                type: 'product',
-            });
-        });
-    }, []);
-
     return (
         <Fragment>
             <Header></Header>
@@ -65,7 +53,7 @@ function FurniturePage() {
             <div className="container">
                 {trendPrediction ? <ImageSlider child={trendPrediction}></ImageSlider> : <p>Loading</p>}
                 {productFeautured ? <ImageSlider child={productFeautured}></ImageSlider> : <p>Loading</p>}
-                {listCard ? <AllProduct listCard={listCard}></AllProduct> : <p>Loading</p>}
+                <AllProduct categoryId={params.categoryId} type={params.type}></AllProduct>
             </div>
             <Footer></Footer>
         </Fragment>

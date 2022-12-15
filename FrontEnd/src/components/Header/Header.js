@@ -54,7 +54,7 @@ function Header() {
                 </div>
                 <nav className="header__nav">
                     <div className="header__nav-item-furniture">
-                        <Link to="/furniture" style={{ color: '#003459' }}>
+                        <Link to="" style={{ color: '#003459' }}>
                             Nội thất
                         </Link>
                         <div className="furniture__hover">
@@ -68,26 +68,30 @@ function Header() {
                                     <div className="item-hover">
                                         <ol>
                                             {type.rooms.map((room) => (
-                                                <li key={room.id} className="furniture__hover-item1">
-                                                    <FontAwesomeIcon
-                                                        style={{ color: 'red', fontSize: '12px' }}
-                                                        icon={faAngleRight}
-                                                    ></FontAwesomeIcon>
-                                                    <div>{room.name}</div>
-                                                    <div className="item-hover1">
-                                                        <ol>
-                                                            {room.categoryEntityList.map((category) => (
-                                                                <li
-                                                                    key={category.id}
-                                                                    style={{ paddingLeft: 12 }}
-                                                                    className="furniture__hover-item"
-                                                                >
-                                                                    {category.name}
-                                                                </li>
-                                                            ))}
-                                                        </ol>
-                                                    </div>
-                                                </li>
+                                                <Link to={`/furniture/room/${room.id}`}>
+                                                    <li key={room.id} className="furniture__hover-item1">
+                                                        <FontAwesomeIcon
+                                                            style={{ color: 'red', fontSize: '12px' }}
+                                                            icon={faAngleRight}
+                                                        ></FontAwesomeIcon>
+                                                        <div>{room.name}</div>
+                                                        <div className="item-hover1">
+                                                            <ol>
+                                                                {room.categoryEntityList.map((category) => (
+                                                                    <li
+                                                                        key={category.id}
+                                                                        style={{ paddingLeft: 12 }}
+                                                                        className="furniture__hover-item"
+                                                                    >
+                                                                        <Link to={`/furniture/category/${category.id}`}>
+                                                                            {category.name}
+                                                                        </Link>
+                                                                    </li>
+                                                                ))}
+                                                            </ol>
+                                                        </div>
+                                                    </li>
+                                                </Link>
                                             ))}
                                         </ol>
                                     </div>

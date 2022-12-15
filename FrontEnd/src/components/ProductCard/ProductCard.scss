@@ -31,6 +31,10 @@
         .product__card-info-name {
             font-size: 1.3rem;
             font-weight: 500;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
         }
 
         .product__card-info-review {

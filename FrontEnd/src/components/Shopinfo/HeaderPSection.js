@@ -14,15 +14,17 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
+import { url } from '../../configs';
 
 function ShopInfo({ product }) {
     const dispath = useDispatch();
     const [otherProduct, setOtherProduct] = useState();
     const [relatedProduct, setRelatedProduct] = useState();
     const [quantityProduct, setQuantityProduct] = useState(1);
+    console.log(product);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/products').then((reponse) =>
+        axios.get(`${url}/api/product/hot-sale/category/${product.categoryId}`).then((reponse) =>
             setOtherProduct({
                 headerText: 'Các sản phẩm khác của shop',
                 pathHeaderText: '',
@@ -32,7 +34,7 @@ function ShopInfo({ product }) {
     }, []);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/products').then((reponse) =>
+        axios.get(`${url}/api/product/hot-sale/category/${product.categoryId}`).then((reponse) =>
             setRelatedProduct({
                 headerText: 'Các sản phẩm liên quan',
                 pathHeaderText: '',
@@ -45,8 +47,8 @@ function ShopInfo({ product }) {
         <div className="container container__info">
             <div className="first_box">
                 <div className="left_column">
-                    <img src={product.img} alt="Product image" className="select"></img>
-                    <Swiper className="swiper" slidesPerView={4}>
+                    <img src={product.images[0]} alt="Product image" className="select"></img>
+                    {/* <Swiper className="swiper" slidesPerView={4}>
                         <div className="swiper-wrapper">
                             <SwiperSlide className="swiper-slide">
                                 <img src={product.img} alt="Product image" className="option select"></img>
@@ -67,7 +69,7 @@ function ShopInfo({ product }) {
                                 <img src={product.img} alt="Product image" className="option"></img>
                             </SwiperSlide>
                         </div>
-                    </Swiper>
+                    </Swiper> */}
                     <div className="empty"></div>
                 </div>
                 <div className="right_column">

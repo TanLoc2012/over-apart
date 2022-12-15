@@ -5,6 +5,7 @@ import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import HeaderPSection from '../../components/Shopinfo/HeaderPSection';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { url } from '../../configs';
 
 function InfoProductPage() {
     const child = [
@@ -23,9 +24,12 @@ function InfoProductPage() {
     ];
 
     const params = useParams();
-    const [productInfo, setProductInfo] = useState({});
+    const [productInfo, setProductInfo] = useState();
+
     useEffect(() => {
-        axios.get(`http://localhost:5000/products/${params.productId}`).then((reponse) => setProductInfo(reponse.data));
+        axios.get(`${url}/api/product/${params.productId}`).then((reponse) => {
+            setProductInfo(reponse.data);
+        });
     }, []);
 
     return (

@@ -18,9 +18,6 @@ public class LayoutEntity {
     @Column(name = "image", columnDefinition = "text", nullable = false)
     private String image;
 
-    @Column(name = "block", nullable = false)
-    private String block;
-
     @Column(name = "room", nullable = false)
     private String room;
 
@@ -43,4 +40,8 @@ public class LayoutEntity {
 
     @OneToMany(mappedBy = "layout")
     private List<RealProjectEntity> realProjectEntityList;
+
+    @ManyToOne
+    @JoinColumn(name = "block_id", nullable = false)
+    private BlockEntity block;
 }

@@ -28,6 +28,11 @@ create table user (
     is_deleted varchar(255) not null
 );
 
+create table block (
+	id bigint auto_increment primary key,
+    name varchar(255) not null
+);
+
 create table layout (
 	id bigint auto_increment primary key,
     image text not null,
@@ -35,6 +40,7 @@ create table layout (
     room varchar(255) not null,
     area double not null,
     model text not null,
+    block_id bigint not null,
     apartment_id bigint not null,
     floor_texture_id bigint not null,
     floor_texture_scale double not null
@@ -83,6 +89,8 @@ create table product (
     discount double,
     price double,
     name varchar(255) not null,
+    created_at datetime not null,
+    updated_at datetime not null,
     seller_id bigint not null,
     category_id bigint not null
 );
@@ -247,6 +255,7 @@ create table product_attribute (
 create table room_type_category (
 	room_type_id bigint not null,
     category_id bigint not null,
+    parent_category_id bigint not null,
     primary key (room_type_id, category_id)
 );
 
@@ -467,5 +476,5 @@ add constraint fk_wall_corner_1 foreign key (wall_id) references wall(id);
 alter table wall_corner
 add constraint fk_wall_corner_2 foreign key (corner_id) references corner(id);
 
-
-
+alter table layout
+add constraint fk_layout_block foreign key (block_id) references block(id);

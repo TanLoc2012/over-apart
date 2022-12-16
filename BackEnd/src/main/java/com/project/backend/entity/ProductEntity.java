@@ -50,6 +50,9 @@ public class ProductEntity {
     @Column(name = "created_at", nullable = false)
     private LocalDate createdAt;
 
+    @Column(name = "updated_at", nullable = false)
+    private LocalDate updatedAt;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "seller_id", nullable = false)
     @JsonIgnore

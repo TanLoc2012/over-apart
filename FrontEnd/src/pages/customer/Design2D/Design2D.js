@@ -9,10 +9,13 @@ import URLImage from '../../../2D/LoadImage';
 import useImage from 'use-image';
 import Konva from 'konva';
 import Layout2D from './Layout2D';
-
+import { update } from '../../../reducers/itemSlice';
+import { useDispatch } from 'react-redux';
 function Design2D() {
+    const dispath = useDispatch();
     const shapeRef = useRef(null);
     const stageRef = useRef(null);
+    const [index,setIndex] = useState(0)
     const stepSize = 40; // set a value for the grid step gap.
     const xSteps = Math.round(1900 / stepSize),
         ySteps = Math.round(700 / stepSize);
@@ -33,10 +36,12 @@ function Design2D() {
     const handleAddWall = (id) => {
         setLayerItems([
             ...layerItems,
-            <Rec2D>
-                <Image image={image} draggable x={500} y={200} style={{ maxWidth: '100px' }} ref={shapeRef} />
-            </Rec2D>,
+            <Rec2D index={index}>
+                <Image image={image} x={500} y={200} style={{ maxWidth: '100px' }} ref={shapeRef} />
+            </Rec2D>
+            ,
         ]);
+        setIndex(index+1);
     };
 
     const url = images.d21;
@@ -75,7 +80,7 @@ function Design2D() {
                     </div>
                 </div>
             </div>
-            <Stage width={window.innerWidth} height={window.innerHeight} ref={stageRef}>
+            <Stage width={window.innerWidth} height={window.innerHeight} ref={stageRef} onClick={() => dispath(update({ index: -1 }))}>
                 <Layer>
                     {verticalLines}
                     {horizontalLines}

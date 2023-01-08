@@ -42,7 +42,7 @@ function ShopInfo({ product }) {
             }),
         );
     }, []);
-
+    
     return (
         <div className="container container__info">
             <div className="first_box">

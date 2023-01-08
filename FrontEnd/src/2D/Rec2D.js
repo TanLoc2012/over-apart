@@ -1,22 +1,25 @@
 import { useEffect } from 'react';
-import { Group, Rect } from 'react-konva';
+import { Group, Line } from 'react-konva';
+import { useDispatch, useSelector } from 'react-redux';
+import { update } from '../reducers/itemSlice';
 function Rec2D(props) {
-    const clickHandler = (e) => {
-        const stage = e.target.absolutePosition();
-        const x = e.target.width();
-        const y = e.target.height();
-        console.table(x,y);
-    };
     // const stage = props.child[0].absolutePosition();
-    useEffect(() => {
-        console.table(props.children.ref.current.width());
-        console.table(props.children.ref.current.height());
-    });
-    
+    const dispath = useDispatch();
+    const index = useSelector((state) => state.item.current);
+    const up = useSelector((state) => state.item.update);
+    useEffect(()=>{
+        console.log(props.index);
+    })
     return (
-        <Group onClick={clickHandler} draggable>
+        <Group draggable onClick={() => dispath(update({ index: props.index }))}>
             {props.children}
-            <Rect x={500} y={100} width={100} height={100} fill="white" stroke="black" strokeWidth={2} />
+            {props.index==index&&props.children.ref.current.x()!=null?
+            <>
+            <Line points={[props.children.ref.current.x(), props.children.ref.current.y()-5, props.children.ref.current.x(), props.children.ref.current.y()-20]} stroke="rgba(0, 0, 0, 0.6)" strokeWidth={3} />
+            <Line points={[props.children.ref.current.x()-5, props.children.ref.current.y(), props.children.ref.current.x()-20, props.children.ref.current.y()]} stroke="rgba(0, 0, 0, 0.6)" strokeWidth={3} />
+            <Line points={[props.children.ref.current.x(), props.children.ref.current.y()+props.children.ref.current.height()+5, props.children.ref.current.x()-20, props.children.ref.current.y()+props.children.ref.current.height()+5]} stroke="rgba(0, 0, 0, 0.6)" strokeWidth={3} />
+            <Line points={[props.children.ref.current.x()+props.children.ref.current.width()+5, props.children.ref.current.y(), props.children.ref.current.x()+props.children.ref.current.width()+5, props.children.ref.current.y()-20]} stroke="rgba(0, 0, 0, 0.6)" strokeWidth={3} />
+            </>:<></>}
         </Group>
     );
 }
